@@ -1,0 +1,39 @@
+//theme color
+$color-purple: #4D44B5;
+$color-orange: #FB7D5B;
+$color-yellow: #FCC43E;
+$color-green: #4CBC9A;
+$color-red: #FF4550;
+$color-white: #FFF;
+$color-grey-1: #F5F5F5;
+$color-grey-2: #C1BBEB;
+$color-grey-3: #A098AE;
+$color-text: #303972;
+$color-background: #F3F4FF;
+
+//transparent color
+$linear-transparent-purple-10: #4d44b51a;
+$linear-transparent-linear-1: linear-gradient(180deg, #FB7D5B -242.86%, #fb7d5b00 100%);
+$linear-transparent-linear-2: linear-gradient(180deg, #FCC43E -241.95%, #fcc43e00 100%);
+$linear-transparent-linear-3: linear-gradient(179deg, #4D44B5 -47.98%, #303972 163.51%);
+
+:export {
+    //export theme color
+    colorPurple: $color-purple;
+    colorOrange: $color-orange;
+    colorYellow: $color-orange;
+    colorGreen: $color-green;
+    colorRed: $color-red;
+    colorWhite: $color-white;
+    colorGrey1: $color-grey-1;
+    colorGrey2: $color-grey-2;
+    colorGrey3: $color-grey-3;
+    colorText: $color-text;
+    colorBackground: $color-background;
+
+    //export transparent color
+    linearTransparentPurple10: $linear-transparent-purple-10;
+    linearTransparentLinear1: $linear-transparent-linear-1;
+    linearTransparentLinear2: $linear-transparent-linear-2;
+    linearTransparentLinear3: $linear-transparent-linear-3;
+}
