@@ -1,15 +1,16 @@
 import './globals.scss'
 import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
+import LeftMenu from './_components/menu/LeftMenu'
 
-const inter = Poppins({
+const poppins = Poppins({
   subsets: ['latin'],
   weight: '400'
 })
 
 export const metadata: Metadata = {
   title: 'Akademi',
-  description: '',
+  description: 'Admin Dashboard',
 }
 
 export default function RootLayout({
@@ -23,7 +24,8 @@ export default function RootLayout({
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
-      <body className={inter.className}>
+      <body className={poppins.className}>
+        <LeftMenu/>
         {children}
       </body>
     </html>

@@ -1,0 +1,72 @@
+@use "./_styles/utils/grid.module.scss";
+
+@mixin textStyle($font-size, $font-weight) {
+    font-size: $font-size;
+    font-weight: $font-weight;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    display: flex;
+}
+
+h1 {
+    //styleName: Heading/Heading 1;
+    @include textStyle(48px, 700);
+}
+
+h2 {
+    //styleName: Heading/Heading 2;
+    @include textStyle(40px, 700);
+}
+
+h3 {
+    //styleName: Heading/Heading 1;
+    @include textStyle(36px, 700);
+}
+
+h4 {
+    //styleName: Heading/Heading 3;
+    @include textStyle(24px, 700);
+}
+
+h5 {
+    //styleName: Heading/Heading 4;
+    @include textStyle(18px, 700)
+}
+
+h6 {
+    //styleName: Heading/Heading 5;
+    @include textStyle(14px, 700)
+}
+
+p.text-semibold-1{
+    //styleName: Text/Text Semi Bold 1;
+    @include textStyle(18px, 600);
+}
+
+p.text-semibold-2 {
+    //styleName: Text/Text Semi Bold 2;
+    @include textStyle(14px, 600);
+}
+
+p.text-medium-1 {
+    //styleName: Text/Text Medium 1
+    @include textStyle(18px, 500);
+}
+
+p.text-medium-2 {
+    //styleName: Text/Text Medium 2
+    @include textStyle(14px, 500);
+}
+
+p.text-regular-1 {
+    //styleName: Text/Text Regular 1
+    @include textStyle(18px, 400);
+}
+
+p.text-regular-2 {
+    //styleName: Text/Text Regular 1
+    @include textStyle(14px, 400);
+}

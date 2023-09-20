@@ -1,0 +1,20 @@
+@use "../utils/variables.module.scss";
+
+@mixin btnStyle($text-color, $bg-color) {
+    color: $text-color;
+    background-color: $bg-color;
+}
+
+.btn-purple {
+    @include btnStyle(variables.$color-white, variables.$color-purple);
+}
+
+.btn-purple-outline {
+    @include btnStyle(variables.$color-purple, variables.$color-background);
+    border: 1px solid variables.$color-purple;
+}
+
+.btn-purple-linear-transparent-10 {
+    @include btnStyle(variables.$color-purple, variables.$linear-transparent-purple-10);
+    font-weight: 600;
+}

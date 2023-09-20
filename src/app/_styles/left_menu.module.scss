@@ -1,0 +1,63 @@
+@use "./utils/responsive.module.scss";
+@use "./utils/variables.module.scss";
+@use "./utils/grid.module.scss";
+
+.leftMenu {
+    background-color: variables.$color-purple;
+    min-height: 100vh;
+    padding-left: 1.5rem;
+
+    &__logo {
+        display: flex;
+        color: variables.$color-white;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 1rem;
+        padding-right: 3rem;
+        &__A{
+            background-color: variables.$color-orange;
+            border-radius: 16px;
+            padding: 0.25rem 1rem;
+        }
+    }
+
+    &__menuList {
+        list-style-type: none;
+        padding-inline-start: 1rem;
+        margin-top: 1.5rem;
+        &__menuItem {
+            margin-bottom: 0.5rem;
+            &__link {
+                color: variables.$color-grey-2;
+                display: flex;
+                align-items: center;
+                gap: 1.25rem;
+                text-decoration: none;
+                padding: 1rem;
+                font-weight: 500;
+                transition: all 400ms;
+                border-bottom-left-radius: 25px;
+                border-top-left-radius: 25px;
+                &:hover {
+                    @extend .leftMenu__menuList__menuItem__link--active;
+                }
+            }
+            &__link--active {
+                background-color: variables.$color-white;
+                color: variables.$color-purple;
+                svg {
+                    path {
+                        fill: variables.$color-purple;
+                    }
+                }
+            }
+        }
+    }
+
+    &__description {
+        padding-right: 1.5rem;
+        margin-bottom: 1rem;
+        color: variables.$color-white;
+    }
+}
