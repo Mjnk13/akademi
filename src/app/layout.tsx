@@ -25,8 +25,10 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body className={poppins.className}>
-        <LeftMenu/>
-        {children}
+        <div className="body-wrapper">
+          <LeftMenu/>
+          {children}
+        </div>
       </body>
     </html>
   )

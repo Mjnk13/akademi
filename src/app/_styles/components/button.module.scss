@@ -1,8 +1,20 @@
 @use "../utils/variables.module.scss";
 
 @mixin btnStyle($text-color, $bg-color) {
+    display: inline-block;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    padding: 0.375rem 0.75rem;
+    cursor: pointer;
     color: $text-color;
     background-color: $bg-color;
+    border: none;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    svg {
+        display: block;
+    }
 }
 
 .btn-purple {
@@ -11,7 +23,7 @@
 
 .btn-purple-outline {
     @include btnStyle(variables.$color-purple, variables.$color-background);
-    border: 1px solid variables.$color-purple;
+    border: 1px solid variables.$color-purple !important;
 }
 
 .btn-purple-linear-transparent-10 {

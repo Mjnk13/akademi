@@ -1,0 +1,14 @@
+@use "./utils/responsive.module.scss";
+@use "./utils/variables.module.scss";
+@use "./utils/grid.module.scss";
+
+.dashboard {
+    flex: 1 0 0%;
+    @extend %row-container;
+    &__mainSection {
+        flex: 1 0 0%;
+    }
+    &__rightMenu {
+        background-color: variables.$color-white;
+    }
+}

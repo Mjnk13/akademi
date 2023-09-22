@@ -1,4 +1,6 @@
 @use "./_styles/utils/grid.module.scss";
+@use "./_styles/utils/variables.module.scss";
+@use "./_styles/utils/container.module.scss";
 
 @mixin textStyle($font-size, $font-weight) {
     font-size: $font-size;
@@ -7,8 +9,11 @@
 }
 
 body {
-    margin: 0;
-    display: flex;
+    background-color: variables.$color-background;
+    @extend %container-fluid;
+    .body-wrapper {
+        @extend %row-container;
+    }
 }
 
 h1 {

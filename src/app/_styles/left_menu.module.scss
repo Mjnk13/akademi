@@ -5,7 +5,8 @@
 .leftMenu {
     background-color: variables.$color-purple;
     min-height: 100vh;
-    padding-left: 1.5rem;
+    max-width: 310px;
+    @extend %col-3;
 
     &__logo {
         display: flex;
@@ -14,7 +15,7 @@
         justify-content: center;
         gap: 1rem;
         margin-top: 1rem;
-        padding-right: 3rem;
+        padding: 0 1rem;
         &__A{
             background-color: variables.$color-orange;
             border-radius: 16px;
@@ -44,7 +45,7 @@
                 }
             }
             &__link--active {
-                background-color: variables.$color-white;
+                background-color: variables.$color-background;
                 color: variables.$color-purple;
                 svg {
                     path {
@@ -56,7 +57,7 @@
     }
 
     &__description {
-        padding-right: 1.5rem;
+        text-align: center;
         margin-bottom: 1rem;
         color: variables.$color-white;
     }

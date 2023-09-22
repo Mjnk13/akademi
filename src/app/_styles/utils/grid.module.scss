@@ -1,12 +1,40 @@
+@use "./responsive.module.scss";
+
 %row-container {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
+    width: 100%;
 }
 
-@for $i from 1 through 12 {
+$grid__cols: 12;
+
+@for $i from 1 through $grid__cols {
     %col-#{$i} {
-        flex-basis: (100% / 12) * $i;
-        max-width: (100% / 12) * $i;
+        flex-basis: ((100 / $grid__cols) * $i) * 1%;
+    }
+    %col-xxl-#{$i} {
+        @include responsive.Responsive(xxl) {
+            flex-basis: ((100 / $grid__cols) * $i) * 1%;
+        }
+    }
+    %col-xl-#{$i} {
+        @include responsive.Responsive(xl) {
+            flex-basis: ((100 / $grid__cols) * $i) * 1%;
+        }
+    }
+    %col-lg-#{$i} {
+        @include responsive.Responsive(lg) {
+            flex-basis: ((100 / $grid__cols) * $i) * 1%;
+        }
+    }
+    %col-md-#{$i} {
+        @include responsive.Responsive(md) {
+            flex-basis: ((100 / $grid__cols) * $i) * 1%;
+        }
+    }
+    %col-sm-#{$i} {
+        @include responsive.Responsive(sm) {
+            flex-basis: ((100 / $grid__cols) * $i) * 1%;
+        }
     }
 }
