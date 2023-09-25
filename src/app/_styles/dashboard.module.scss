@@ -1,6 +1,7 @@
 @use "./utils/responsive.module.scss";
 @use "./utils/variables.module.scss";
 @use "./utils/grid.module.scss";
+@use "./components/button.module.scss";
 
 .dashboard {
     flex: 1 0 0%;
@@ -10,5 +11,105 @@
     }
     &__rightMenu {
         background-color: variables.$color-white;
+        padding: 2rem;
+        &__recentStudents {
+            margin-top: 1rem;
+            &__heading {
+                display: flex;
+                gap: 2rem;
+                align-items: center;
+                &__addBtn{
+                    @extend %btn-purple;
+                    border-radius: 50%;
+                    width: 40px;
+                    height: 40px;
+                }
+                margin: 2rem 0;
+            }
+            &__list {
+                &__item {
+                    display: flex;
+                    gap: 1rem;
+                    margin-bottom: 1.5rem;
+                    align-items: center;
+                    &__avatar{
+                        width: 2.5rem;
+                        height: 2.5rem;
+                        background: variables.$color-grey-2;
+                        border-radius: 50%;
+                    }
+                    &__mailBtn {
+                        @extend %btn-white-outline;
+                        border-radius: 50%;
+                        margin-left: auto;
+                        &--active {
+                            @extend %btn-purple;
+                            border-radius: 50%;
+                            margin-left: auto;
+                            svg {
+                                path {
+                                    fill: variables.$color-white;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &__viewMoreBtn {
+                @extend %view-more-btn;
+            }
+        }
+        &__messages {
+            margin-top: 2.5rem;
+            &__list {
+                margin: 1.5rem 0;
+                &__item {
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    border-bottom: 1px solid variables.$color-grey-3;
+                    padding-bottom: 1rem;
+                    margin-bottom: 1rem;
+                    &__avatar {
+                        @extend .dashboard__rightMenu__recentStudents__list__item__avatar;
+                    }
+                    &__info {
+                        &__text {
+                            max-width: 15ch;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                            color: variables.$color-grey-3;
+                        }
+                    }
+                }
+            }
+            &__viewMoreBtn {
+                @extend %view-more-btn;
+            }
+        }
+        &__currentFoodsMenu {
+            margin-top: 2.5rem;
+            &__list {
+                margin: 2rem 0;
+                &__item {
+                    margin: 1rem 0;
+                    &__placeHolder {
+                        border-radius: 25px;
+                        background-color: variables.$color-grey-2;
+                        height: 20vh;
+                        width: 100%;
+                        margin-bottom: 1.75rem;
+                    }
+                    &__body {
+                        @extend .dashboard__rightMenu__messages__list__item__info__text;
+                        margin-top: 0.25rem;
+                    }
+                }
+            }
+            &__viewMoreBtn {
+                @extend %view-more-btn;
+            }
+        }
     }
 }

@@ -18,16 +18,13 @@ import ActivityIcon from "../icon/ActivityIcon";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-type menu = {
-    text: string,
-    icon: React.ReactNode,
-    link: string
-}
+//types
+import { left_menu } from "@/types/leftmenu"
 
 const LeftMenu = () => {
     const patchName = usePathname()
 
-    const menuList:menu[] = [
+    const menuList:left_menu[] = [
         {
             text: "Dashboard",
             icon: <HomeIcon/>,
@@ -84,7 +81,7 @@ const LeftMenu = () => {
                 <h3>Akademi</h3>
             </div>
             <ul className={styles.leftMenu__menuList}>
-                {menuList.map((item:menu, index:number) => (
+                {menuList.map((item:left_menu, index:number) => (
                         <li key={`menu-item-${index}`} className={styles.leftMenu__menuList__menuItem}>
                             <Link href={item.link} scroll={false} className={ styles.leftMenu__menuList__menuItem__link + `${ patchName === item.link ? " " + styles["leftMenu__menuList__menuItem__link--active"] : "" }` }>
                                 {item.icon}

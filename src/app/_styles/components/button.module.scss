@@ -17,16 +17,29 @@
     }
 }
 
-.btn-purple {
+%btn-purple {
     @include btnStyle(variables.$color-white, variables.$color-purple);
 }
 
-.btn-purple-outline {
+%btn-purple-outline {
     @include btnStyle(variables.$color-purple, variables.$color-background);
     border: 1px solid variables.$color-purple !important;
 }
 
-.btn-purple-linear-transparent-10 {
+%btn-white-outline {
+    @include btnStyle(variables.$color-grey-3, variables.$color-white);
+    border: 1px solid variables.$color-grey-3 !important;
+}
+
+%btn-purple-linear-transparent-10 {
     @include btnStyle(variables.$color-purple, variables.$linear-transparent-purple-10);
     font-weight: 600;
+}
+
+%view-more-btn {
+    @extend %btn-purple-linear-transparent-10;
+    width: 100%;
+    border-radius: 25px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }

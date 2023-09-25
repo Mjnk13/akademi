@@ -46,32 +46,36 @@ h6 {
     @include textStyle(14px, 700)
 }
 
-p.text-semibold-1{
+.text-semibold-1{
     //styleName: Text/Text Semi Bold 1;
     @include textStyle(18px, 600);
 }
 
-p.text-semibold-2 {
+.text-semibold-2 {
     //styleName: Text/Text Semi Bold 2;
     @include textStyle(14px, 600);
 }
 
-p.text-medium-1 {
+.text-medium-1 {
     //styleName: Text/Text Medium 1
     @include textStyle(18px, 500);
 }
 
-p.text-medium-2 {
+.text-medium-2 {
     //styleName: Text/Text Medium 2
     @include textStyle(14px, 500);
 }
 
-p.text-regular-1 {
+.text-regular-1 {
     //styleName: Text/Text Regular 1
     @include textStyle(18px, 400);
 }
 
-p.text-regular-2 {
+.text-regular-2 {
     //styleName: Text/Text Regular 1
     @include textStyle(14px, 400);
+}
+
+button {
+    font-family: inherit;
 }
