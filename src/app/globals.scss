@@ -76,6 +76,6 @@ h6 {
     @include textStyle(14px, 400);
 }
 
-button {
+button, label, input {
     font-family: inherit;
 }

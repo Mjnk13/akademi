@@ -12,29 +12,29 @@ $grid__cols: 12;
     %col-#{$i} {
         flex-basis: ((100 / $grid__cols) * $i) * 1%;
     }
-    %col-xxl-#{$i} {
-        @include responsive.Responsive(xxl) {
-            flex-basis: ((100 / $grid__cols) * $i) * 1%;
+    @include responsive.Responsive(xxl) {
+        %col-xxl-#{$i} {
+            flex-basis: ((100 / $grid__cols) * $i) * 1% !important;
         }
     }
-    %col-xl-#{$i} {
-        @include responsive.Responsive(xl) {
-            flex-basis: ((100 / $grid__cols) * $i) * 1%;
+    @include responsive.Responsive(xl) {
+        %col-xl-#{$i} {
+            flex-basis: ((100 / $grid__cols) * $i) * 1% !important;
         }
     }
-    %col-lg-#{$i} {
-        @include responsive.Responsive(lg) {
-            flex-basis: ((100 / $grid__cols) * $i) * 1%;
+    @include responsive.Responsive(lg) {
+        %col-lg-#{$i} {
+            flex-basis: ((100 / $grid__cols) * $i) * 1% !important;
         }
     }
-    %col-md-#{$i} {
-        @include responsive.Responsive(md) {
-            flex-basis: ((100 / $grid__cols) * $i) * 1%;
+    @include responsive.Responsive(md) {
+        %col-md-#{$i} {
+            flex-basis: ((100 / $grid__cols) * $i) * 1% !important;
         }
     }
-    %col-sm-#{$i} {
-        @include responsive.Responsive(sm) {
-            flex-basis: ((100 / $grid__cols) * $i) * 1%;
+    @include responsive.Responsive(sm) {
+        %col-sm-#{$i} {
+            flex-basis: ((100 / $grid__cols) * $i) * 1% !important;
         }
     }
 }

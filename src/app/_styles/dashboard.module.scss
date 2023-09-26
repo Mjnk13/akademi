@@ -2,12 +2,59 @@
 @use "./utils/variables.module.scss";
 @use "./utils/grid.module.scss";
 @use "./components/button.module.scss";
+@use "./utils/container.module.scss";
+@use "./components/search.module.scss";
 
 .dashboard {
     flex: 1 0 0%;
     @extend %row-container;
     &__mainSection {
         flex: 1 0 0%;
+        @extend %container;
+        padding: 1rem 1.5rem;
+        &__heading {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            &__search {
+                @extend %search;
+            }
+        }
+        &__overview {
+            @extend %container-bg-white;
+            @extend %row-container;
+            margin-top: 2rem;
+            padding: 1rem 0;
+            &__item {
+                @extend %col-12, %col-md-12, %col-lg-6, %col-xl-6, %col-xxl-3;
+                display: flex;
+                gap: 1rem;
+                justify-content: center;
+                align-items: center;
+                &__iconBg {
+                    border-radius: 50%;
+                    padding: 0.5rem;
+                    svg {
+                        path {
+                            fill: variables.$color-white;
+                        }
+                    }
+                    &--purple {
+                        background-color: variables.$color-purple;
+                    }
+                    &--orange {
+                        background-color: variables.$color-orange;
+                    }
+                    &--yellow {
+                        background-color: variables.$color-yellow;
+                    }
+                    &--text {
+                        background-color: variables.$color-text;
+                    }
+                }
+            }
+        }
     }
     &__rightMenu {
         background-color: variables.$color-white;

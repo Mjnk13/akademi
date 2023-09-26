@@ -1,6 +1,14 @@
+@use "./variables.module.scss";
+
 %container {
     max-width: 900px;
     margin: 0 auto;
+    border-radius: 25px;
+}
+
+%container-bg-white {
+    @extend %container;
+    background-color: variables.$color-white;
 }
 
 %container-fluid {
