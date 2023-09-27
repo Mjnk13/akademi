@@ -1,0 +1,64 @@
+@use "../utils/variables.module.scss";
+
+%paginate {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    ul {
+        display: flex;
+        gap: 1rem;
+        justify-content: end;
+        margin: 2rem 0 1rem 0;
+        padding: 0;
+        background: transparent;
+        list-style-type: none;
+        height: 7vh;
+        li {
+            border-radius: 50%;
+            text-align: center;
+            width: 36px;
+            height: 36px;
+            line-height: 36px;
+            border: 2px solid variables.$color-grey-3;
+            color: variables.$color-grey-3;
+            a {
+                text-decoration: none !important;
+                cursor: pointer;
+                user-select: none;
+                padding: 1rem 0.75rem;
+                svg {
+                    path {
+                        fill: variables.$color-grey-3;
+                    }
+                }
+            }
+        }
+        li[class*="selected"] {
+            color: variables.$color-white;
+            background: variables.$color-purple;
+            border: 2px solid variables.$color-purple;
+            font-weight: 600;
+            box-shadow: 0px 7px 16px 0px #00000024;
+        }
+        li[class*="previous"] {
+            border: none;
+            a {
+                padding: 0;
+                svg {
+                    rotate: 90deg;
+                }
+            } 
+        } 
+        li[class*="next"] {
+            border: none;
+            padding: 0;
+            a {
+                padding: 0;
+                svg {
+                    rotate: -90deg;
+                }
+            } 
+        } 
+    }
+}

@@ -4,6 +4,7 @@
 @use "./components/button.module.scss";
 @use "./utils/container.module.scss";
 @use "./components/search.module.scss";
+@use "./components/paginate.module.scss";
 
 .dashboard {
     flex: 1 0 0%;
@@ -53,6 +54,44 @@
                         background-color: variables.$color-text;
                     }
                 }
+            }
+        }
+        &__unpaidStudentIntuition {
+            @extend %container-bg-white;
+            padding: 1rem 1rem;
+            margin-top: 3rem;
+            &__table {
+                width: 100%;
+                &__row {
+                    height: 7rem;
+                    &__class {
+                        display: flex;
+                        gap: 0.5rem;
+                        align-items: center;
+                        &__iconWrapper{
+                            padding: 0.5rem;
+                            background-color: variables.$color-orange;
+                            border-radius: 50%;
+                            svg {
+                                width: 24px;
+                                height: 24px;
+                                display: block;
+                                path {
+                                    fill: variables.$color-white;
+                                }
+                            }
+                        }
+                    }
+                    &__printBtn {
+                        @include button.btnStyle(transparent, transparent);
+                    }
+                    &__optionBtn {
+                        @include button.btnStyle(transparent, transparent);
+                    }
+                }
+            }
+            &__paginate{
+                @extend %paginate;
             }
         }
     }

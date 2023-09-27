@@ -1,0 +1,38 @@
+@use "./utils/variables.module.scss";
+@use "./utils/container.module.scss";
+@use "./components/search.module.scss";
+@use "./components/button.module.scss";
+
+.students {
+    flex: 1 1 auto;
+    padding: 1rem 2rem;
+    &__heading {
+        &__1 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        &__2 {
+            @extend .students__heading__1;
+            &__search {
+                @extend %search;
+            }
+            &__btnGroup {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+                &__newest{
+                    height: 100%;
+                    @extend %btn-purple-linear-transparent-10, %btn-text-and-icon;
+                    border-radius: 25px;
+                    margin-right: 1rem
+                }
+                &__newStudent{
+                    @extend %btn-purple, %btn-text-and-icon;
+                    border-radius: 25px;
+                }
+            }
+        }
+    }
+}

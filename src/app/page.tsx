@@ -5,6 +5,7 @@ import styles from "@/app/_styles/dashboard.module.scss"
 import RightMenu from "./_components/dashboard/RightMenu"
 import Heading from "./_components/dashboard/Heading"
 import OverView from "./_components/dashboard/OverView"
+import UnpaidStudentIntuition from "./_components/dashboard/UnpaidStudentIntuition"
 
 export default function Dashboard() {
   return (
@@ -12,6 +13,7 @@ export default function Dashboard() {
       <div className={styles.dashboard__mainSection}>
         <Heading/>
         <OverView/>
+        <UnpaidStudentIntuition/>
       </div>
       <RightMenu/>
     </div>
