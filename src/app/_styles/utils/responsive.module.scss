@@ -7,21 +7,21 @@ $xxl: 1400px;
 
 @mixin Responsive($canvas) {
     @if $canvas == xs {
-        @media only screen and (min-width: $xs) and (max-width: ($sm - 1px)) { @content; } 
+        @media only screen and (max-width: $xs) { @content; } 
     }
     @else if $canvas == sm {
-        @media only screen and (min-width: $sm) and (max-width: ($md - 1px)) { @content; } 
+        @media only screen and (max-width: $sm) { @content; } 
     }
     @else if $canvas == md {
-        @media only screen and (min-width: $md) and (max-width: ($lg - 1px)) { @content; } 
+        @media only screen and (max-width: $md) { @content; } 
     }
     @else if $canvas == lg {
-        @media only screen and (min-width: $lg) and (max-width: ($xl - 1px)) { @content; } 
+        @media only screen and (max-width: $lg) { @content; } 
     }
     @else if $canvas == xl {
-        @media only screen and (min-width: $xl) and (max-width: ($xxl - 1px)) { @content; } 
+        @media only screen and (max-width: $xl) { @content; } 
     }
     @else if $canvas == xxl {
-        @media only screen and (min-width: $xxl) { @content; } 
+        @media only screen and (max-width: $xxl) { @content; } 
     }
 }

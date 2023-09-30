@@ -12,7 +12,7 @@ const MessagesItem = (props:message) => {
                 <p className="text-semibold-2">{props.name}</p>
                 <p className={`text-regular-2 ${styles.dashboard__rightMenu__messages__list__item__info__text}`}>{props.text}</p>
             </div>
-            <p className="text-regular-2" style={{alignSelf: "flex-start"}}>{props.time}</p>
+            <p className={`text-regular-2 ${styles.dashboard__rightMenu__messages__list__item__time}`}>{props.time}</p>
         </div>
     );
 }

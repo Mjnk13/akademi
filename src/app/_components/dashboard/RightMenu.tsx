@@ -1,8 +1,8 @@
 //sub components
 import UserMenu from "../menu/UserMenu"
-import RecentStudentItem from "./subcomponent/RecentStudentItem"
-import MessagesItem from "./subcomponent/MessagesItem"
-import CurrentFoodsMenuItem from "./subcomponent/CurrentFoodsMenuItem"
+import RecentStudentItem from "./subComponent/RecentStudentItem"
+import MessagesItem from "./subComponent/MessagesItem"
+import CurrentFoodsMenuItem from "./subComponent/CurrentFoodsMenuItem"
 
 //styles
 import styles from "@/app/_styles/dashboard.module.scss"

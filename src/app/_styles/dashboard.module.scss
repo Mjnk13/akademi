@@ -28,11 +28,10 @@
             margin-top: 2rem;
             padding: 1rem 0;
             &__item {
-                @extend %col-12, %col-md-12, %col-lg-6, %col-xl-6, %col-xxl-3;
+                @extend  %col-3, %col-xl-6, %col-md-12;
                 display: flex;
-                gap: 1rem;
-                justify-content: center;
                 align-items: center;
+                gap: 0.5rem;
                 &__iconBg {
                     border-radius: 50%;
                     padding: 0.5rem;
@@ -167,6 +166,10 @@
                             white-space: nowrap;
                             color: variables.$color-grey-3;
                         }
+                    }
+                    &__time {
+                        margin-left: auto;
+                        align-self: flex-start;
                     }
                 }
             }

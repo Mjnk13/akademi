@@ -2,6 +2,7 @@
 @use "./utils/container.module.scss";
 @use "./components/search.module.scss";
 @use "./components/button.module.scss";
+@use "./components//paginate.module.scss";
 
 .students {
     flex: 1 1 auto;
@@ -24,7 +25,10 @@
                 gap: 0.5rem;
                 &__newest{
                     height: 100%;
-                    @extend %btn-purple-linear-transparent-10, %btn-text-and-icon;
+                    @extend %btn-purple-outline, %btn-text-and-icon;
+                    background-color: variables.$color-background;
+                    border: 2px solid variables.$color-purple;
+                    color: variables.$color-purple;
                     border-radius: 25px;
                     margin-right: 1rem
                 }
@@ -34,5 +38,111 @@
                 }
             }
         }
+    }
+    &__tableWrapper {
+        @extend %container-fluid-bg-white;
+        padding: 1rem;
+        &__table {
+            width: 100%;
+            border-collapse: collapse;
+            th, td {
+                border-bottom: 1px solid variables.$color-grey-2;
+                padding: 1rem 0;
+            }
+            tr {
+                :has(input:checked) {
+                    border-left: 3px solid variables.$color-purple;
+                }
+            }
+            &__inputWrapper {
+                display: block;
+                margin: 0 0.5rem;
+                position: relative;
+                cursor: pointer;
+                user-select: none;
+                border: none !important;
+                :has(input:checked) {
+                    background-color: variables.$color-purple;
+                }
+                input {
+                    margin: 0;
+                    opacity: 0;
+                    cursor: pointer;
+                    height: 27px;
+                    width: 27px;
+                    &:checked {
+                        ~ .students__tableWrapper__table__inputWrapper__checkmark {
+                            background-color: variables.$color-purple;
+                            svg {
+                                display: block;
+                            }
+                        }
+                    }
+                }
+                &__checkmark {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 25px;
+                    width: 25px;
+                    background-color: variables.$color-white;
+                    border-radius: 3px;
+                    border: 2px solid variables.$color-grey-2;
+                    svg {
+                        display: none;
+                    }
+
+                }
+            }
+            &__item {
+                height: 5rem;
+                &__name {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.75rem;
+                    &__avatar {
+                        width: 3rem;
+                        height: 3rem;
+                        border-radius: 50%;
+                        background-color: variables.$color-grey-2;
+                    }
+                }
+                &__contact {
+                    display: flex;
+                    gap: 1rem;
+                    &__phone {
+                        @extend .students__tableWrapper__table__item__contact__mail;
+                    }
+                    &__mail {
+                        @extend %btn-purple-linear-transparent-10;
+                        border-radius: 50%;
+                        padding: 0.75rem;
+                        path {
+                            fill: variables.$color-purple;
+                        }
+                    }
+                }
+                &__grade {
+                    padding: 4px 8px;
+                    border-radius: 25px;
+                    text-align: center;
+                    &--orange {
+                        background-color: variables.$color-orange;
+                    }
+                    &--yellow {
+                        background-color: variables.$color-yellow;
+                    }
+                    &--purple {
+                        background-color: variables.$color-purple;
+                    }
+                }
+                &__option {
+                    @include button.btnStyle(transparent, transparent);
+                }
+            }
+        }
+    }
+    &__paginate {
+        @extend %paginate;
     }
 }
