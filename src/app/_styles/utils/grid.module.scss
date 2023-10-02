@@ -3,7 +3,6 @@
 %row-container {
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
 }
 
 $grid__cols: 12;
@@ -11,30 +10,36 @@ $grid__cols: 12;
 @for $i from 1 through $grid__cols {
     %col-#{$i} {
         flex-basis: ((100 / $grid__cols) * $i) * 1%;
+        max-width: ((100 / $grid__cols) * $i) * 1%;
     }
     @include responsive.Responsive(xxl) {
         %col-xxl-#{$i} {
             flex-basis: ((100 / $grid__cols) * $i) * 1%;
+            max-width: ((100 / $grid__cols) * $i) * 1%;
         }
     }
     @include responsive.Responsive(xl) {
         %col-xl-#{$i} {
             flex-basis: ((100 / $grid__cols) * $i) * 1%;
+            max-width: ((100 / $grid__cols) * $i) * 1%;
         }
     }
     @include responsive.Responsive(lg) {
         %col-lg-#{$i} {
             flex-basis: ((100 / $grid__cols) * $i) * 1%;
+            max-width: ((100 / $grid__cols) * $i) * 1%;
         }
     }
     @include responsive.Responsive(md) {
         %col-md-#{$i} {
             flex-basis: ((100 / $grid__cols) * $i) * 1%;
+            max-width: ((100 / $grid__cols) * $i) * 1%;
         }
     }
     @include responsive.Responsive(sm) {
         %col-sm-#{$i} {
             flex-basis: ((100 / $grid__cols) * $i) * 1%;
+            max-width: ((100 / $grid__cols) * $i) * 1%;
         }
     }
 }

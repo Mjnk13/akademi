@@ -12,7 +12,8 @@ body {
     background-color: variables.$color-background;
     @extend %container-fluid;
     .body-wrapper {
-        @extend %row-container;
+        display: flex;
+        width: 100%;
     }
 }
 

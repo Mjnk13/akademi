@@ -1,6 +1,16 @@
+//styles
+import styles from "@/app/_styles/foods.module.scss"
+
+//components
+import Heading from "../_components/foods/Heading"
+import FoodsList from "../_components/foods/FoodsList";
+
 const Food = () => {
     return (
-        <div>this is food page</div>
+        <div className={styles.foods}>
+            <Heading/>
+            <FoodsList/>
+        </div>
     );
 }
  

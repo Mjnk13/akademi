@@ -23,14 +23,14 @@
             }
         }
         &__overview {
-            @extend %container-bg-white;
-            @extend %row-container;
+            @extend %container-bg-white, %row-container;
             margin-top: 2rem;
             padding: 1rem 0;
             &__item {
                 @extend  %col-3, %col-xl-6, %col-md-12;
                 display: flex;
                 align-items: center;
+                justify-content: center;
                 gap: 0.5rem;
                 &__iconBg {
                     border-radius: 50%;

@@ -3,6 +3,9 @@
 //react
 import { useState } from "react";
 
+//components
+import Paginate from "../paginate/Paginate";
+
 //style
 import styles from "@/app/_styles/teachers.module.scss"
 
@@ -15,6 +18,11 @@ import PhoneIcon from "../icon/PhoneIcon";
 import MailIcon from "../icon/MailIcon";
 
 const TeacherList = () => {
+    const [currentPage, setCurrentPage] = useState(0);
+    const handlePageClick = (data: { selected: number }) => {
+        setCurrentPage(data.selected);
+    };
+
     const teacher:teacher[] = [
         {
             name: "Dimitres Viga",
@@ -68,15 +76,22 @@ const TeacherList = () => {
 
     return (
         <div className={styles.teachers__list}>
-            <div className={styles.teachers__list__item}>
-                <button className={styles.teachers__list__item__option}><DotsIcon/></button>
-                <div className={styles.teachers__list__item__avatar}></div>
-                <h3 className={styles.teachers__list__item__name}>awegsdfws</h3>
-                <p className={`text-regular-1 ${styles.teachers__list__item__major}`}>hjewfbqjbch</p>
-                <div className={styles.teachers__list__item__contact}>
-                    <button className={styles.teachers__list__item__contact__phone}><PhoneIcon/></button>
-                    <button className={styles.teachers__list__item__contact__mail}><MailIcon/></button>
+            { teacher.map((item:teacher) => (
+                <div key={`teacher-${item.name}`} className={styles.teachers__list__itemWrapper}>
+                    <div className={styles.teachers__list__itemWrapper__item}>
+                        <button className={styles.teachers__list__itemWrapper__item__option}><DotsIcon/></button>
+                        <div className={styles.teachers__list__itemWrapper__item__avatar}></div>
+                        <h4 className={styles.teachers__list__itemWrapper__item__name}>{item.name}</h4>
+                        <p className={`text-regular-1 ${styles.teachers__list__itemWrapper__item__major}`}>{item.major}</p>
+                        <div className={styles.teachers__list__itemWrapper__item__contact}>
+                            <button className={styles.teachers__list__itemWrapper__item__contact__phone}><PhoneIcon/></button>
+                            <button className={styles.teachers__list__itemWrapper__item__contact__mail}><MailIcon/></button>
+                        </div>
+                    </div>
                 </div>
+            ))}
+            <div className={styles.teachers__paginate}>
+                <Paginate handlePageClick={handlePageClick} pageCount={3} currentPage={currentPage}/>
             </div>
         </div>
     );
