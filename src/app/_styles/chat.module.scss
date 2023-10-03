@@ -30,9 +30,216 @@
         padding: 1.5rem;
         &__leftSide {
             @extend %col-4;
+            &__wrapper {
+                padding: 1rem;
+                &__mainTitle {
+                    color: variables.$color-text;
+                    margin-bottom: 1rem;
+                }
+                &__search {
+                    @extend %search;
+                    input {
+                        width: 100%;
+                        border: 2px solid variables.$color-grey-3;
+                    }
+                    svg {
+                        path {
+                            fill: variables.$color-text;
+                        }
+                    }
+                }
+                &__groupList {
+                    margin-top: 1rem;
+                    &__title {
+                        color: variables.$color-grey-3;
+                        margin-top: 1rem;
+                    }
+                    &__item {
+                        display: flex;
+                        align-items: center;
+                        gap: 1rem;
+                        padding: 1rem;
+                        cursor: pointer;
+                        padding: 1rem 0;
+                        border-bottom: 2px solid variables.$color-grey-2;
+                        &__avatar {
+                            width: 3rem;
+                            height: 3rem;
+                            border-radius: 50%;
+                            &--purple {
+                                background-color: variables.$color-purple;
+                            }
+                            &--orange {
+                                background-color: variables.$color-orange;
+                            }
+                            &--yellow {
+                                background-color: variables.$color-yellow;
+                            }
+                        }
+                        &__info {
+                            display: flex;
+                            flex: 1 1 auto;
+                            &__nameAndMessageWrapper {
+                                &__name {
+                                    color: variables.$color-text;
+                                    margin-bottom: 0.5rem;
+                                }
+                                &__message {
+                                    color: variables.$color-grey-3;
+                                    //text limit 15 chars
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                    white-space: nowrap;
+                                    max-width: 20ch;
+                                }
+                            }
+                            &__timeAndNumUnreadMessageWrapper {
+                                margin-left: auto;
+                                &__time {
+                                    color: variables.$color-grey-3;
+                                    margin-bottom: 0.5rem;
+                                }
+                                &__numOfUnreadMessage {
+                                    background-color: variables.$color-orange;
+                                    padding: 0.2rem 0.6rem;
+                                    border-radius: 50%;
+                                    color: variables.$color-white;
+                                    float: right;
+                                }
+                            }
+                        }
+                    }
+                }
+                &__chatList {
+                    @extend .chat__messageSection__leftSide__wrapper__groupList;
+                    &__title {
+                        @extend .chat__messageSection__leftSide__wrapper__groupList__title;
+                    }
+                    &__item {
+                        @extend .chat__messageSection__leftSide__wrapper__groupList__item;
+                        &__avatar {
+                            @extend .chat__messageSection__leftSide__wrapper__groupList__item__avatar;
+                            &--grey2 {
+                                background-color: variables.$color-grey-2;
+                            }
+                        }
+                        &__info {
+                            @extend .chat__messageSection__leftSide__wrapper__groupList__item__info;
+                            &__nameAndMessageWrapper {
+                                &__name {
+                                    @extend .chat__messageSection__leftSide__wrapper__groupList__item__info__nameAndMessageWrapper__name;
+                                }
+                                &__message {
+                                    @extend .chat__messageSection__leftSide__wrapper__groupList__item__info__nameAndMessageWrapper__message;
+                                }
+                            }
+                            &__timeAndNumUnreadMessageWrapper {
+                                @extend .chat__messageSection__leftSide__wrapper__groupList__item__info__timeAndNumUnreadMessageWrapper;
+                                &__time {
+                                    @extend .chat__messageSection__leftSide__wrapper__groupList__item__info__timeAndNumUnreadMessageWrapper__time;
+                                }
+                                &__numOfUnreadMessage {
+                                    @extend .chat__messageSection__leftSide__wrapper__groupList__item__info__timeAndNumUnreadMessageWrapper__numOfUnreadMessage;
+                                }
+                            }
+                        }
+                    }
+                }
+                &__viewMoreBtn {
+                    @extend %view-more-btn;
+                    margin-top: 1rem;
+                }
+            }
         }
         &__rightSide {
             @extend %col-8;
+            &__wrapper {
+                padding: 1rem;
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                &__header {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    &__userChatWith {
+                        display: flex;
+                        align-items: center;
+                         gap: 1rem;
+                        &__avatar {
+                            width: 5rem;
+                            height: 5rem;
+                            border-radius: 50%;
+                            background-color: variables.$color-grey-2;
+                        }
+                        &__info {
+                            &__name {
+                                color: variables.$color-text;
+                                margin-bottom: 0.5rem;
+                            }
+                            &__status {
+                                display: flex;
+                                align-items: center;
+                                gap: 1rem;
+                                &__dotIndicator {
+                                    width: 16px;
+                                    height: 16px;
+                                    border-radius: 50%;
+                                    background-color: variables.$color-green;
+                                }
+                                &__text {
+                                    color: variables.$color-grey-3;
+                                }
+                            }
+                        }
+                    }
+                    &__btnGroup {
+                        display: flex;
+                        align-items: center;
+                        gap: 1rem;
+                        &__video {
+                            @include button.btnStyle(transparent, transparent);
+                        }
+                        &__more {
+                            @include button.btnStyle(transparent, transparent);
+                        }
+                    }
+                }
+                &__body {
+                    flex: 1 1 auto;
+                }
+                &__footer {
+                    &__sendMessageWrapper {
+                        padding: 0.25rem;
+                        display: flex;
+                        border-radius: 25px;
+                        border: 2px solid variables.$color-grey-3;
+                        &__input  {
+                            flex: 1 1 auto;
+                            border-radius: 25px;
+                            margin-left: 0.5rem;
+                            border: none;
+                            outline: none;
+                        }
+                        &__btnGroup {
+                            display: flex;
+                            align-items: center;
+                            gap: 1rem;
+                            &__attachment {
+                                @include button.btnStyle(transparent, transparent);
+                            }
+                            &__send {
+                                @extend %btn-purple, %btn-text-and-icon;
+                                border-radius: 25px;
+                                svg {
+                                    width: 30px;
+                                    height: 30px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
