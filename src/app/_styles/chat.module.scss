@@ -5,6 +5,13 @@
 @use "./components/button.module.scss";
 @use "./components/paginate.module.scss";
 
+%message {
+    padding: 0.5rem 1rem;
+    max-width: 50%;
+    width: fit-content;
+    margin: 1rem 0;
+}
+
 .chat {
     flex: 1 1 auto;
     padding: 1rem 2rem;
@@ -27,11 +34,10 @@
     &__messageSection {
         @extend %container-fluid-bg-white, %row-container;
         border-radius: 25px;
-        padding: 1.5rem;
         &__leftSide {
             @extend %col-4;
             &__wrapper {
-                padding: 1rem;
+                padding: 1.5rem;
                 &__mainTitle {
                     color: variables.$color-text;
                     margin-bottom: 1rem;
@@ -154,18 +160,19 @@
         &__rightSide {
             @extend %col-8;
             &__wrapper {
-                padding: 1rem;
                 display: flex;
                 flex-direction: column;
                 height: 100%;
+                border-left: 1px solid variables.$color-grey-2;
                 &__header {
+                    padding: 1.5rem;
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
                     &__userChatWith {
                         display: flex;
                         align-items: center;
-                         gap: 1rem;
+                        gap: 1rem;
                         &__avatar {
                             width: 5rem;
                             height: 5rem;
@@ -207,11 +214,48 @@
                 }
                 &__body {
                     flex: 1 1 auto;
+                    padding: 1.5rem;
+                    border-top: 1px solid variables.$color-grey-2;
+                    border-bottom: 1px solid variables.$color-grey-2;
+                    &__messageOther {
+                        @extend %message;
+                        background-color: variables.$color-grey-1;
+                        &__text {
+                            color: variables.$color-text;
+                        }
+                        &--rounded {
+                            border-radius: 25px;
+                        }
+                        &--bubbleChat {
+                            border-radius: 25px 25px 25px 0;
+                        }
+                    }
+                    &__messageMe {
+                        @extend %message;
+                        background-color: variables.$color-purple;
+                        &__text {
+                            color: variables.$color-white;
+                        }
+                        margin-left: auto;
+                        &--rounded {
+                            @extend .chat__messageSection__rightSide__wrapper__body__messageOther--rounded;
+                        }
+                        &--bubbleChat {
+                            border-radius: 25px 25px 0 25px;
+                        }
+                    }
+                    &__time {
+                        color: variables.$color-grey-3;
+                        &--right {
+                            text-align: right;
+                        }
+                    }
                 }
                 &__footer {
+                    padding: 1.5rem;
                     &__sendMessageWrapper {
-                        padding: 0.25rem;
                         display: flex;
+                        padding: 0.25rem;
                         border-radius: 25px;
                         border: 2px solid variables.$color-grey-3;
                         &__input  {

@@ -1,29 +1,13 @@
 //styles
 import styles from "@/app/_styles/chat.module.scss"
 
-//types
-import { message } from "@/types/chat";
-
 //icons
-import VideoIcon from "../../icon/VideoIcon";
-import DotsIcon from "../../icon/DotsIcon";
-import SendIcon from "../../icon/SendIcon";
-import AttachmentIcon from "../../icon/AttachmentIcon";
+import VideoIcon from "../../icon/VideoIcon"
+import DotsIcon from "../../icon/DotsIcon"
+import SendIcon from "../../icon/SendIcon"
+import AttachmentIcon from "../../icon/AttachmentIcon"
 
 const RightSide = () => {
-    const messages: message[] = [
-        {
-            text: "Hello Minh!",
-            time: "12:45 PM",
-            by: "other",
-        },
-        {
-            text: "Hello Minh!",
-            time: "12:45 PM",
-            by: "other",
-        }
-    ]
-
     return (
         <div className={styles.chat__messageSection__rightSide}>
             <div className={styles.chat__messageSection__rightSide__wrapper}>
@@ -44,7 +28,20 @@ const RightSide = () => {
                     </div>
                 </div>
                 <div className={styles.chat__messageSection__rightSide__wrapper__body}>
-
+                    <div className={`${styles.chat__messageSection__rightSide__wrapper__body__messageOther} ${styles["chat__messageSection__rightSide__wrapper__body__messageOther--rounded"]}`}>
+                        <p className={`text-regular-1 ${styles.chat__messageSection__rightSide__wrapper__body__messageOther__text}`}>Hello Minh!</p>
+                    </div>
+                    <div className={`${styles.chat__messageSection__rightSide__wrapper__body__messageOther}  ${styles["chat__messageSection__rightSide__wrapper__body__messageOther--bubbleChat"]}`}>
+                        <p className={`text-regular-1 ${styles.chat__messageSection__rightSide__wrapper__body__messageOther__text}`}>Can i see your history lesson homework?</p>
+                    </div>
+                    <p className={`text-regular-2 ${styles.chat__messageSection__rightSide__wrapper__body__time}`}>12:45 PM</p>
+                    <div className={`${styles.chat__messageSection__rightSide__wrapper__body__messageMe} ${styles["chat__messageSection__rightSide__wrapper__body__messageMe--rounded"]}`}>
+                        <p className={`text-regular-1 ${styles.chat__messageSection__rightSide__wrapper__body__messageMe__text}`}>Hello Samantha!</p>
+                    </div>
+                    <div className={`${styles.chat__messageSection__rightSide__wrapper__body__messageMe}  ${styles["chat__messageSection__rightSide__wrapper__body__messageMe--bubbleChat"]}`}>
+                        <p className={`text-regular-1 ${styles.chat__messageSection__rightSide__wrapper__body__messageMe__text}`}>I’m not finished yet, why don’t work together to finish homework?</p>
+                    </div>
+                    <p className={`text-regular-2 ${styles.chat__messageSection__rightSide__wrapper__body__time} ${styles["chat__messageSection__rightSide__wrapper__body__time--right"]}`}>12:45 PM</p>
                 </div>
                 <div className={styles.chat__messageSection__rightSide__wrapper__footer}>
                     <div className={styles.chat__messageSection__rightSide__wrapper__footer__sendMessageWrapper}>
