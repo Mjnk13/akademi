@@ -1,0 +1,112 @@
+@use "../utils/responsive.module.scss";
+@use "../utils/variables.module.scss";
+@use "../utils/grid.module.scss";
+@use "../components/button.module.scss";
+@use "../utils/container.module.scss";
+
+.profile {
+    position: relative;
+    &__background {
+        background-color: variables.$color-purple;
+        border-radius: 25px 25px 0 0;
+        position: absolute;
+        width: 100%;
+        height: 15vh;
+        overflow: hidden;
+        &__circle {
+            position: absolute;
+            height: 12rem;
+            width: 12rem;
+            border-radius: 50%;
+            &--yellow {
+                right: 5rem;
+                top: 1rem;
+                background-color: variables.$color-yellow;
+            }
+            &--orange {
+                right: 11rem;
+                top: 3.5rem;
+                background-color: variables.$color-orange;
+            }
+        }
+    }
+    &__userInfo {
+        @extend %container-fluid-bg-white;
+        padding: 1.5rem;
+        border-radius: 25px;
+        &__header {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            &__avatar {
+                background-color: variables.$color-grey-2;
+                height: 8rem;
+                width: 8rem;
+                border-radius: 50%;
+                border: 4px solid variables.$color-white;
+            }
+            &__optionBtn {
+                @include button.btnStyle(transparent, transparent);
+                align-self: flex-end;
+            }
+        }
+        &__body {
+            @extend %row-container;
+            align-items: center;
+            gap: 2.5rem;
+            margin-top: 0.5rem;
+            &__mainInfo {
+                &__name {
+                    color: variables.$color-text;
+                }
+                &__role {
+                    color: variables.$color-text;
+                }
+                &__location {
+                    margin-top: 0.5rem;
+                    display: flex;
+                    gap: 0.5rem;
+                    align-items: center;
+                    &__text {
+                        color: variables.$color-grey-3;
+                    }
+                    svg {
+                        path {
+                            color: variables.$color-grey-3;
+                        }
+                    }
+                }
+            }
+            &__contact {
+                @extend %row-container;
+                flex: 1 1 auto;
+                gap: 1.5rem;
+                &__item {
+                    &__title {
+                        color: variables.$color-grey-3;
+                        margin-bottom: 1rem;
+                    }
+                    &__info {
+                        display: flex;
+                        align-items: center;
+                        gap: 1rem;
+                        &__icon{
+                            border-radius: 50%;
+                            padding: 0.5rem;
+                            background-color: variables.$color-orange;
+                            svg {
+                                display: block;
+                                path {
+                                    fill: variables.$color-white;
+                                }
+                            }
+                        }
+                        &__description {
+                            color: variables.$color-text;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

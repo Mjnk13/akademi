@@ -10,8 +10,8 @@
     flex: 1 0 0%;
     @extend %row-container;
     &__mainSection {
+        @extend %container-fluid;
         flex: 1 0 0%;
-        @extend %container;
         padding: 1rem 1.5rem;
         &__heading {
             display: flex;

@@ -1,5 +1,5 @@
 //styles
-import styles from "@/app/_styles/foods.module.scss"
+import styles from "@/app/_styles/latest_activity.module.scss"
 
 //icons
 import SearchIcon from "../icon/SearchIcon"
@@ -9,10 +9,10 @@ import UserMenu from "../menu/UserMenu"
 
 const Heading = () => {
     return (
-        <div className={styles.foods__heading}>
-            <h2 className={styles.foods__heading__title}>Food</h2>
-            <div className={styles.foods__heading__right}>
-                <div className={styles.foods__heading__right__search}>
+        <div className={styles.latestActivity__heading}>
+            <h2 className={styles.latestActivity__heading__title}>Notification & Latest Activity</h2>
+            <div className={styles.latestActivity__heading__right}>
+                <div className={styles.latestActivity__heading__right__search}>
                     <input type="text" id="dashboard-search" placeholder=""></input>
                     <label htmlFor="dashboard-search">
                         <SearchIcon/>Search here...

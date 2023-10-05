@@ -1,0 +1,33 @@
+@use "./utils/responsive.module.scss";
+@use "./utils/variables.module.scss";
+@use "./utils/grid.module.scss";
+@use "./components/button.module.scss";
+@use "./utils/container.module.scss";
+@use "./components/search.module.scss";
+@use "./components/profile.module.scss";
+
+.userDashboard {
+    flex: 1 0 0%;
+    @extend %row-container;
+    &__mainSection {
+        @extend %container-fluid;
+        flex: 1 0 0%;
+        padding: 1rem 1.5rem;
+        &__heading{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            &__title {
+                color: variables.$color-text;
+            }
+            &__search {
+                @extend %search;
+            }
+        }
+    }
+    &__rightMenu {
+        background-color: variables.$color-white;
+        padding: 2rem;
+    }
+}
