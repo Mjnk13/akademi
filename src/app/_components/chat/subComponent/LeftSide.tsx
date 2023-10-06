@@ -9,7 +9,7 @@ import { chat, group } from "@/types/chat"
 
 //components
 import Group from "./Group"
-import Chat from "./Chat"
+import Chat from "../../contact_and_chat/ChatItem"
 
 const LeftSide = () => {
     const groups:group[] = [

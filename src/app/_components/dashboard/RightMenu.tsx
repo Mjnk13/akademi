@@ -1,20 +1,20 @@
 //sub components
 import UserMenu from "../menu/UserMenu"
-import RecentStudentItem from "./subComponent/RecentStudentItem"
 import MessagesItem from "./subComponent/MessagesItem"
 import CurrentFoodsMenuItem from "./subComponent/CurrentFoodsMenuItem"
+import StudentContactItem from "../contact_and_chat/StudentContactItem"
 
 //styles
 import styles from "@/app/_styles/dashboard.module.scss"
 import variables from "@/app/_styles/utils/variables.module.scss"
 
 //types
-import { recent_student } from "@/types/recentstudent"
+import { contact } from "@/types/contact"
 import { message } from "@/types/message"
 import { current_food } from "@/types/currentfood"
 
 const RightMenu = () => {
-    const recentStudent:recent_student[] = [
+    const recentStudent:contact[] = [
         {
             name: "Samantha William",
             class: "VII A",
@@ -95,8 +95,8 @@ const RightMenu = () => {
                 </div>
 
                 <div className={styles.dashboard__rightMenu__recentStudents__list}>
-                    { recentStudent.map((student:recent_student, index:number) => (
-                        <RecentStudentItem key={`recent-student-${index}`} name={student.name} class={student.class} isNotify={student.isNotify} />
+                    { recentStudent.map((student:contact, index:number) => (
+                        <StudentContactItem key={`recent-student-${index}`} name={student.name} class={student.class} isNotify={student.isNotify} />
                     )) }
                 </div>
 

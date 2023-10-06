@@ -1,0 +1,32 @@
+@use "./button.module.scss";
+@use "../utils/variables.module.scss";
+
+.contactItem {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+    align-items: center;
+    &__avatar{
+        width: 3rem;
+        height: 3rem;
+        background: variables.$color-grey-2;
+        border-radius: 50%;
+    }
+    &__mailBtn {
+        @extend %btn-white-outline;
+        padding: 0.5rem;
+        border-radius: 50%;
+        margin-left: auto;
+        &--active {
+            @extend %btn-purple;
+            padding: 0.6rem;
+            border-radius: 50%;
+            margin-left: auto;
+            svg {
+                path {
+                    fill: variables.$color-white;
+                }
+            }
+        }
+    }
+}

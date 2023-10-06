@@ -111,35 +111,9 @@
                 }
                 margin: 2rem 0;
             }
-            &__list {
-                &__item {
-                    display: flex;
-                    gap: 1rem;
-                    margin-bottom: 1.5rem;
-                    align-items: center;
-                    &__avatar{
-                        width: 2.5rem;
-                        height: 2.5rem;
-                        background: variables.$color-grey-2;
-                        border-radius: 50%;
-                    }
-                    &__mailBtn {
-                        @extend %btn-white-outline;
-                        border-radius: 50%;
-                        margin-left: auto;
-                        &--active {
-                            @extend %btn-purple;
-                            border-radius: 50%;
-                            margin-left: auto;
-                            svg {
-                                path {
-                                    fill: variables.$color-white;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+            // &__list {
+                
+            // }
             &__viewMoreBtn {
                 @extend %view-more-btn;
             }
@@ -156,7 +130,10 @@
                     padding-bottom: 1rem;
                     margin-bottom: 1rem;
                     &__avatar {
-                        @extend .dashboard__rightMenu__recentStudents__list__item__avatar;
+                        width: 3rem;
+                        height: 3rem;
+                        background: variables.$color-grey-2;
+                        border-radius: 50%;
                     }
                     &__info {
                         &__text {

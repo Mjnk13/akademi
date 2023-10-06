@@ -1,4 +1,4 @@
-export type recent_student = {
+export type contact = {
     name: string,
     class: string,
     isNotify: boolean

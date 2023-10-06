@@ -4,6 +4,7 @@
 @use "./components/search.module.scss";
 @use "./components/button.module.scss";
 @use "./components/paginate.module.scss";
+@use "./components/chat_item.module.scss";
 
 %message {
     padding: 0.5rem 1rem;
@@ -61,17 +62,9 @@
                         margin-top: 1rem;
                     }
                     &__item {
-                        display: flex;
-                        align-items: center;
-                        gap: 1rem;
-                        padding: 1rem;
-                        cursor: pointer;
-                        padding: 1rem 0;
-                        border-bottom: 2px solid variables.$color-grey-2;
+                        @extend .chatItem;
                         &__avatar {
-                            width: 3rem;
-                            height: 3rem;
-                            border-radius: 50%;
+                            @extend .chatItem__avatar;
                             &--purple {
                                 background-color: variables.$color-purple;
                             }
@@ -83,34 +76,22 @@
                             }
                         }
                         &__info {
-                            display: flex;
-                            flex: 1 1 auto;
+                            @extend .chatItem__info;
                             &__nameAndMessageWrapper {
                                 &__name {
-                                    color: variables.$color-text;
-                                    margin-bottom: 0.5rem;
+                                    @extend .chatItem__info__nameAndMessageWrapper__name;
                                 }
                                 &__message {
-                                    color: variables.$color-grey-3;
-                                    //text limit 15 chars
-                                    overflow: hidden;
-                                    text-overflow: ellipsis;
-                                    white-space: nowrap;
-                                    max-width: 20ch;
+                                    @extend .chatItem__info__nameAndMessageWrapper__message;
                                 }
                             }
                             &__timeAndNumUnreadMessageWrapper {
-                                margin-left: auto;
+                                @extend .chatItem__info__timeAndNumUnreadMessageWrapper;
                                 &__time {
-                                    color: variables.$color-grey-3;
-                                    margin-bottom: 0.5rem;
+                                    @extend .chatItem__info__timeAndNumUnreadMessageWrapper__time;
                                 }
                                 &__numOfUnreadMessage {
-                                    background-color: variables.$color-orange;
-                                    padding: 0.2rem 0.6rem;
-                                    border-radius: 50%;
-                                    color: variables.$color-white;
-                                    float: right;
+                                    @extend .chatItem__info__timeAndNumUnreadMessageWrapper__numOfUnreadMessage;
                                 }
                             }
                         }
@@ -120,35 +101,6 @@
                     @extend .chat__messageSection__leftSide__wrapper__groupList;
                     &__title {
                         @extend .chat__messageSection__leftSide__wrapper__groupList__title;
-                    }
-                    &__item {
-                        @extend .chat__messageSection__leftSide__wrapper__groupList__item;
-                        &__avatar {
-                            @extend .chat__messageSection__leftSide__wrapper__groupList__item__avatar;
-                            &--grey2 {
-                                background-color: variables.$color-grey-2;
-                            }
-                        }
-                        &__info {
-                            @extend .chat__messageSection__leftSide__wrapper__groupList__item__info;
-                            &__nameAndMessageWrapper {
-                                &__name {
-                                    @extend .chat__messageSection__leftSide__wrapper__groupList__item__info__nameAndMessageWrapper__name;
-                                }
-                                &__message {
-                                    @extend .chat__messageSection__leftSide__wrapper__groupList__item__info__nameAndMessageWrapper__message;
-                                }
-                            }
-                            &__timeAndNumUnreadMessageWrapper {
-                                @extend .chat__messageSection__leftSide__wrapper__groupList__item__info__timeAndNumUnreadMessageWrapper;
-                                &__time {
-                                    @extend .chat__messageSection__leftSide__wrapper__groupList__item__info__timeAndNumUnreadMessageWrapper__time;
-                                }
-                                &__numOfUnreadMessage {
-                                    @extend .chat__messageSection__leftSide__wrapper__groupList__item__info__timeAndNumUnreadMessageWrapper__numOfUnreadMessage;
-                                }
-                            }
-                        }
                     }
                 }
                 &__viewMoreBtn {

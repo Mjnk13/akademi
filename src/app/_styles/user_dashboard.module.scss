@@ -18,6 +18,7 @@
             flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
+            margin-bottom: 2rem;
             &__title {
                 color: variables.$color-text;
             }
@@ -25,9 +26,152 @@
                 @extend %search;
             }
         }
+        &__contactMessageSection {
+            @extend %row-container;
+            margin-top: 2rem;
+            &__contactWrapper {
+                @extend %col-5;
+                &__contactSection {
+                    @extend %container-fluid-bg-white;
+                    margin-right: 0.5rem;
+                    padding: 1.5rem;
+                    &__header {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        &__wrapper {
+                            &__title {
+                                color: variables.$color-text;
+                            }
+                            &__info {
+                                color: variables.$color-grey-3;
+                                &--number {
+                                    color: variables.$color-text;
+                                }
+                            }
+                        }
+                        &__addBtn {
+                            @extend %btn-purple;
+                            border-radius: 50%;
+                            width: 40px;
+                            height: 40px;
+                        }
+                    }
+                    &__search {
+                        @extend %search;
+                        margin-top: 1rem;
+                        margin-bottom: 1.25rem;
+                        border-radius: 25px;
+                        border: 2px solid variables.$color-grey-3;
+                        width: 100%;
+                    }
+                    &__list{
+                        margin-top: 1rem;
+                    }
+                    &__viewMoreBtn {
+                        @extend %view-more-btn;
+                    }
+                }
+            }
+            &__messageWrapper {
+                @extend %col-7;
+                &__messageSection {
+                    @extend %container-fluid-bg-white;
+                    margin-left: 0.5rem;
+                    padding: 1.5rem;
+                    &__title {
+                        color: variables.$color-text;
+                    }
+                    &__search {
+                        @extend %search;
+                        margin-top: 1rem;
+                        border-radius: 25px;
+                        border: 2px solid variables.$color-grey-3;
+                        width: 100%;
+                    }
+                    &__list{
+                        margin: 1rem 0;
+                    }
+                    &__viewMoreBtn {
+                        @extend %view-more-btn;
+                    }
+                }
+            }
+        }
     }
     &__rightMenu {
         background-color: variables.$color-white;
-        padding: 2rem;
+        padding: 2rem 1.25rem;
+        &__userPlan {
+            overflow: hidden;
+            position: relative;
+            margin: 2rem 0;
+            background-color: variables.$color-purple;
+            border-radius: 25px;
+            padding: 1.5rem;
+            color: variables.$color-white;
+            &__pillDecorate1{
+                position: absolute;
+                background-color: variables.$color-orange;
+                border-radius: 100px;
+                width: 6rem;
+                height: 16rem;
+                bottom: -6rem;
+                right: 1rem;
+            }
+            &__pillDecorate2{
+                position: absolute;
+                background-color: variables.$color-yellow;
+                border-radius: 100px;
+                width: 6rem;
+                height: 16rem;
+                bottom: -3rem;
+                right: -2rem;
+            }
+            &__header {
+                position: inherit;
+                display: flex;
+                justify-content: space-between;
+                &__optionBtn {
+                    @include button.btnStyle(transparent, transparent);
+                    align-self: flex-start;
+                    svg {
+                        path {
+                            fill: variables.$color-white;
+                        }
+                    }
+                }
+            }
+            &__body {
+                position: inherit;
+                margin-bottom: 2rem;
+                &__ul {
+                    padding-inline-start: 1rem;
+                    &__li {
+                        &::marker {
+                            font-size: 2rem;
+                        }
+                    }
+                }
+                &__description {
+                    word-break: break-word;
+                    max-width: 35ch;
+                }
+            }
+            &__footer {
+                position: inherit;
+                &__upgradePlanBtn {
+                    @extend %btn-white;
+                    border-radius: 25px;
+                    padding: 0.475rem 0.85rem;
+                }
+            }
+        }
+        &__latestActivity {
+            &__title {
+                color: variables.$color-text;
+                margin-bottom: 1rem;
+            }
+        }
     }
 }

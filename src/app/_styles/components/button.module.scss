@@ -21,6 +21,10 @@
     @include btnStyle(variables.$color-white, variables.$color-purple);
 }
 
+%btn-white {
+    @include btnStyle(variables.$color-text, variables.$color-white);
+}
+
 %btn-purple-outline {
     @include btnStyle(variables.$color-purple, variables.$color-background);
     border: 2px solid variables.$color-purple !important;

@@ -29,67 +29,6 @@
             &__title {
                 color: variables.$color-text;
             }
-            &__ul {
-                list-style: none;
-                &__liItem {
-                    position: relative;
-                    display: flex;
-                    gap: 1.5rem;
-                    align-items: flex-start;
-                    padding: 1rem 0;
-                    z-index: 0;
-                    &__verticalDotsLeft {
-                        border-radius: 50%;
-                        border: 4px solid variables.$color-purple;
-                        padding: 0.3rem;
-                        background: variables.$color-white;
-                    }
-                    &__verticalLineLeft {
-                        position: absolute;
-                        height: 100%;
-                        background-color: variables.$color-purple;
-                        width: 2px;
-                        z-index: -1;
-                        left: 8px;
-                    }
-                    &:last-child {
-                        .latestActivity__activitySection__sectionItems__ul__liItem__verticalLineLeft {
-                            display: none;
-                        }
-                    }
-                    &__wrapper {
-                        flex: 1 1 auto;
-                        &__time{
-                            color: variables.$color-grey-3;
-                            margin-bottom: 0.5rem;
-                        }
-                        &__image {
-                            @extend %row-container;
-                            margin-top: 1rem;
-                            position: relative;
-                            &__wrapper {
-                                @extend %col-3;
-                                padding-right: 1rem;
-                                &__file {
-                                    width: 100%;
-                                    background-color: variables.$color-grey-2;
-                                    border-radius: 25px;
-                                    height: 8rem;
-                                }
-                            }
-                        }
-                        &--who {
-                            color: variables.$color-text;
-                        }
-                        &--status {
-                            color: variables.$color-text;
-                        }
-                        &--reminder {
-                            color: variables.$color-red;
-                        }
-                    }
-                }
-            }
         }
     }
 }
