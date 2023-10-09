@@ -1,8 +1,8 @@
 @use "./utils/responsive.module.scss";
 @use "./utils/variables.module.scss";
 @use "./utils/grid.module.scss";
-@use "./components/button.module.scss";
 @use "./utils/container.module.scss";
+@use "./components/button.module.scss";
 @use "./components/search.module.scss";
 @use "./components/paginate.module.scss";
 
@@ -24,7 +24,7 @@
         }
         &__overview {
             @extend %container-bg-white, %row-container;
-            margin-top: 2rem;
+            margin: 2rem 0;
             padding: 1rem 0;
             &__item {
                 @extend  %col-3, %col-xl-6, %col-md-12;
@@ -55,10 +55,35 @@
                 }
             }
         }
+        &__schoolCalendarAndFinanceSection {
+            @extend %row-container;
+            margin: 2rem 0;
+            &__calendarWrapper {
+                @extend %col-6;
+                &__content {
+                    @extend %container-fluid-bg-white;
+                    padding: 1.75rem;
+                    &__header {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        &__title {
+                            color: variables.$color-text;
+                        }
+                        &__dateBtn {
+                            @include button.btnStyle(variables.$color-text, transparent);
+                            @extend %btn-text-and-icon;
+                        }
+                    }
+                }
+            }
+            &__financeWrapper {
+                @extend %col-6;
+            }
+        }
         &__unpaidStudentIntuition {
             @extend %container-bg-white;
-            padding: 1rem 1rem;
-            margin-top: 3rem;
+            padding: 1.5rem;
             &__table {
                 width: 100%;
                 &__row {

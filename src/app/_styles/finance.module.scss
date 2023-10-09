@@ -1,0 +1,157 @@
+@use "./utils/variables.module.scss";
+@use "./utils/container.module.scss";
+@use "./utils/grid.module.scss";
+@use "./components/search.module.scss";
+@use "./components/button.module.scss";
+@use "./components/paginate.module.scss";
+
+.finance {
+    flex: 1 1 auto;
+    padding: 1rem 2rem;
+    &__heading {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 3rem;
+        &__title {
+            color: variables.$color-text;
+        }
+        &__right {
+            display: flex;
+            gap: 2rem;
+            &__search {
+                @extend %search;
+            }
+        }
+    }
+    &__overview {
+        @extend %row-container;
+        margin-bottom: 2rem;
+        &__itemWrapper {
+            @extend %col-3;
+            &--chart {
+                @extend %col-6;
+            }
+            padding-right: 1rem;
+            &:last-child {
+                padding-right: 0;
+            }
+            &__item {
+                @extend %container-fluid-bg-white;
+                padding: 1rem 0;
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+                &__icon {
+                    padding: 0.5rem;
+                    border-radius: 50%;
+                    &--purple {
+                        background-color: variables.$color-purple;   
+                    }
+                    &--orange {
+                        background-color: variables.$color-orange;   
+                    }
+                    &--yellow {
+                        background-color: variables.$color-yellow;   
+                    }
+                    svg {
+                        display: block;
+                        path {
+                            fill: variables.$color-white;
+                        }
+                    }
+                }
+                &__info {
+                    &__title{
+                        color: variables.$color-grey-3;
+                    }
+                    &__amount {
+                        color: variables.$color-text;
+                    }
+                    &__compare {
+                        color: variables.$color-grey-3;
+                        &--green {
+                            color: variables.$color-green;
+                        }
+                        &--red {
+                            color: variables.$color-red;
+                        }
+                    }
+                }
+                &__chart {
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+    &__tablesSection {
+        @extend %row-container;
+        margin-top: 2rem;
+        &__unpaidStudentIntuitionWrapper {
+            @extend %col-7;
+            padding-right: 1rem;
+            height: 100%;
+        }
+        &__schoolExpenseWrapper {
+            @extend %col-5;
+            padding-left: 1rem;
+            height: 100%;
+            &__content {
+                @extend %container-fluid-bg-white;
+                display: flex;
+                flex-direction: column;
+                padding: 1rem;
+                &__title {
+                    color: variables.$color-text;
+                }
+                &__table {
+                    width: 100%;
+                    flex: 1 0 auto;
+                    td {
+                        height: 6rem;
+                    }
+                    &__mainInfo {
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                        &__icon {
+                            background-color: variables.$color-red;
+                            padding: 0.5rem;
+                            border-radius: 50%;
+                            svg {
+                                display: block;
+                            }
+                        }
+                        &__text {
+                            &__id {
+                                color: variables.$color-text;
+                            }
+                            &__time {
+                                color: variables.$color-grey-2;
+                            }
+                        }
+                    }
+                    &__amount {
+                        color: variables.$color-text;
+                    }
+                    &__status {
+                        &--completed {
+                            color: variables.$color-green;
+                        }
+                        &--pending {
+                            color: variables.$color-grey-3;
+                        }
+                        &--cancelled {
+                            color: variables.$color-red;
+                        }
+                    }
+                }
+                &__paginate {
+                    @extend %paginate;
+                }
+            }
+        }
+    }
+}

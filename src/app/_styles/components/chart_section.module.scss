@@ -1,0 +1,59 @@
+@use "../utils/variables.module.scss";
+@use "../utils/container.module.scss";
+@use "../utils/grid.module.scss";
+@use "../components/search.module.scss";
+@use "../components/button.module.scss";
+@use "../components/paginate.module.scss";
+
+.chartSection {
+    @extend %container-fluid-bg-white;
+    padding: 1.75rem;
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        &__title {
+            color: variables.$color-text;
+        }
+        &__right {
+            display: flex;
+            gap: 1.5rem;
+            &__label {
+                display: flex;
+                gap: 0.3rem;
+                &__dots {
+                    border-radius: 50%;
+                    width: 12px;
+                    height: 12px;
+                    margin-top: 0.25rem;
+                    &--expense {
+                        background-color: variables.$color-white;
+                        border: 3px solid variables.$color-yellow;
+                    }
+                    &--income {
+                        background-color: variables.$color-white;
+                        border: 3px solid variables.$color-orange;
+                    }
+                }
+                &__info {
+                    &__title {
+                        color: variables.$color-grey-3;
+                    }
+                    &__amount {
+                        color: variables.$color-text;
+                    }   
+                }
+            }
+            &__monthBtn {
+                @extend %btn-purple-outline, %btn-text-and-icon;
+                border-radius: 25px;
+            }
+        }
+    }
+    &__chart {
+        margin-top: 1rem;
+        img {
+            width: 100%;
+        }
+    }
+}

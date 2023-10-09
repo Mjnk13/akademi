@@ -1,0 +1,25 @@
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    // gap: 8px;
+    &__day {
+        padding: 8px;
+        border: 1px solid #ddd;
+        text-align: center;
+    }
+    &__dayName {
+        @extend .calendar__day;
+        font-weight: bold;
+        background-color: #f4f4f4;
+    }
+    &--today {
+        background-color: blue;
+        color: white;
+    }
+    &--markDay {
+        background-color: orange;
+    }
+    &--otherMonth {
+        color: #aaa;
+    }
+}
