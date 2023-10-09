@@ -60,7 +60,7 @@ const ActivitySection = () => {
             { activitySectionItems.map((activitySectionItem, index) => (
                 <div key={`section-item-${index}`} className={styles.latestActivity__activitySection__sectionItem}>
                     <h4 className={styles.latestActivity__activitySection__sectionItems__title}>{activitySectionItem.time}</h4>
-                    <ActivityList data={activitySectionItem.activities} wordBreak15char={false}/>
+                    <ActivityList data={activitySectionItem.activities} wordBreak15char={false} verticalDotsLeft="whiteOutlinePurple" verticalLineLeft="purple"/>
                 </div>
             ))}
         </div>

@@ -12,17 +12,29 @@
         z-index: 0;
         &__verticalDotsLeft {
             border-radius: 50%;
-            border: 4px solid variables.$color-purple;
-            padding: 0.3rem;
-            background: variables.$color-white;
+            &--whiteOutlinePurple {
+                border: 4px solid variables.$color-purple;
+                padding: 0.3rem;
+                background: variables.$color-white;
+            }
+            &--grey {
+                padding: 1rem;
+                background-color: variables.$color-grey-2;
+            }
         }
         &__verticalLineLeft {
             position: absolute;
             height: 100%;
-            background-color: variables.$color-purple;
             width: 2px;
             z-index: -1;
-            left: 8px;
+            &--purple {
+                background-color: variables.$color-purple;
+                left: 8px;
+            }
+            &--grey {
+                background-color: variables.$color-grey-2;
+                left: 15px;
+            }
         }
         &:last-child {
             .activityList__liItem__verticalLineLeft {

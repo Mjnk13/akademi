@@ -42,7 +42,7 @@ const LatestActivity = () => {
     return (
         <div className={styles.userDashboard__rightMenu__latestActivity}>
             <h3 className={styles.userDashboard__rightMenu__latestActivity__title}>Latest Activity</h3>
-            <ActivityList data={activities} wordBreak15char={true}/>
+            <ActivityList data={activities} wordBreak15char={true} verticalDotsLeft="grey" verticalLineLeft="grey"/>
         </div>
     );
 }
