@@ -1,25 +1,51 @@
-.calendar {
+@use "../utils/variables.module.scss";
+
+%calendar-grid {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    // gap: 8px;
-    &__day {
-        padding: 8px;
-        border: 1px solid #ddd;
-        text-align: center;
+}
+
+.staticCalendar {
+    &__daysHeader {
+        @extend %calendar-grid;
+        justify-items: center;
+        &__dayOfWeek {
+            padding: 0.3rem;
+            color: variables.$color-grey-3;
+        }
     }
-    &__dayName {
-        @extend .calendar__day;
-        font-weight: bold;
-        background-color: #f4f4f4;
-    }
-    &--today {
-        background-color: blue;
-        color: white;
-    }
-    &--markDay {
-        background-color: orange;
-    }
-    &--otherMonth {
-        color: #aaa;
+    &__daysSection {
+        @extend %calendar-grid;
+        &__dayWrapper {
+            padding: 0.3rem;
+            border: 2px solid variables.$color-grey-1;
+            &:nth-child(7n+1) {
+                .calendar__daysSection__dayWrapper__day {
+                    color: variables.$color-orange;
+                }
+            }
+            &__day {
+                color: variables.$color-text;
+                padding: 8px;
+                border-radius: 50%;
+                text-align: center;
+            }
+            &--today {
+                color: variables.$color-white !important;
+                background-color: variables.$color-purple;
+            }
+            &__markDay {
+                color: variables.$color-white !important;
+                &--orange {
+                    background-color: variables.$color-orange;
+                }
+                &--yellow {
+                    background-color: variables.$color-yellow;
+                }
+            }
+            &--otherMonth {
+                color: variables.$color-grey-3 !important;
+            }
+        }
     }
 }

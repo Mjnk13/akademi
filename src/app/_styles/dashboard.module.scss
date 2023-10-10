@@ -60,13 +60,16 @@
             margin: 2rem 0;
             &__calendarWrapper {
                 @extend %col-6;
+                padding-right: 1rem;
                 &__content {
                     @extend %container-fluid-bg-white;
+                    height: 100%;
                     padding: 1.75rem;
                     &__header {
                         display: flex;
                         align-items: center;
                         justify-content: space-between;
+                        margin-bottom: 2rem;
                         &__title {
                             color: variables.$color-text;
                         }
@@ -79,6 +82,7 @@
             }
             &__financeWrapper {
                 @extend %col-6;
+                padding-left: 1rem;
             }
         }
         &__unpaidStudentIntuition {
