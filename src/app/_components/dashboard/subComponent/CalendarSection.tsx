@@ -5,7 +5,7 @@ import styles from "@/app/_styles/dashboard.module.scss"
 import DropdownIcon from "../../icon/DropdownIcon"
 
 //components
-import StaticCalendar from "../../calendar/StaticCalendar"
+import SmallStaticCalendar from "../../calendar/SmallStaticCalendar"
 
 //types
 import { mark_day } from "@/types/calendar"
@@ -28,7 +28,7 @@ const CalendarSection = () => {
                 <h3 className={styles.dashboard__mainSection__schoolCalendarAndFinanceSection__calendarWrapper__content__header__title}>School Calendar</h3>
                 <button className={styles.dashboard__mainSection__schoolCalendarAndFinanceSection__calendarWrapper__content__header__dateBtn}>March 2021 <DropdownIcon/></button>
             </div>
-            <StaticCalendar markDays={markDays} year={2021} month={2} day={8}/>
+            <SmallStaticCalendar markDays={markDays} year={2021} month={2} day={8}/>
         </div>
     );
 }
