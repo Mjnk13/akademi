@@ -1,5 +1,6 @@
 @use "./utils/variables.module.scss";
 @use "./utils/container.module.scss";
+@use "./utils/grid.module.scss";
 @use "./components/search.module.scss";
 @use "./components/button.module.scss";
 @use "./components/paginate.module.scss";
@@ -100,11 +101,15 @@
                     display: flex;
                     align-items: center;
                     gap: 0.75rem;
+                    text-decoration: none;
                     &__avatar {
                         width: 3rem;
                         height: 3rem;
                         border-radius: 50%;
                         background-color: variables.$color-grey-2;
+                    }
+                    &__text {
+                        color: variables.$color-text;
                     }
                 }
                 &__contact {
@@ -144,5 +149,39 @@
     }
     &__paginate {
         @extend %paginate;
+    }
+}
+
+.studentDetails {
+    flex: 1 1 auto;
+    padding: 1rem 2rem;
+    &__heading {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 3rem;
+        &__title {
+            color: variables.$color-text;
+        }
+        &__right {
+            display: flex;
+            gap: 2rem;
+            &__search {
+                @extend %search;
+            }
+        }
+    }
+    &__mainSection {
+        @extend %row-container;
+        &__profileSection {
+            @extend %col-8;
+            padding-right: 1rem;
+            &__margin {
+                height: 2rem;
+            }
+        }
+        &__scheduleDetailsSection {
+            @extend %col-4;
+        }
     }
 }

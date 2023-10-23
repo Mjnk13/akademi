@@ -1,9 +1,9 @@
 @use "./utils/variables.module.scss";
 @use "./utils/container.module.scss";
+@use "./utils/grid.module.scss";
 @use "./components/search.module.scss";
 @use "./components/button.module.scss";
 @use "./components/paginate.module.scss";
-@use "./utils/grid.module.scss";
 
 .teachers {
     flex: 1 1 auto;

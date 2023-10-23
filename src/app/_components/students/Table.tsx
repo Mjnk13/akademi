@@ -1,58 +1,30 @@
 'use client'
 
 //react
-import { useState } from "react";
+import { useState } from "react"
 
 //style
 import styles from "@/app/_styles/students.module.scss"
 import variables from "@/app/_styles/utils/variables.module.scss"
 
 //types
-import { student } from "@/types/student";
+import { student } from "@/types/student"
+
+//raw_data
+import { Students } from "@/raw_data/student"
 
 //icons
-import PhoneIcon from "../icon/PhoneIcon";
-import MailIcon from "../icon/MailIcon";
-import DotsIcon from "../icon/DotsIcon";
-import CheckedIcon from "../icon/CheckedIcon";
+import PhoneIcon from "../icon/PhoneIcon"
+import MailIcon from "../icon/MailIcon"
+import DotsIcon from "../icon/DotsIcon"
+import CheckedIcon from "../icon/CheckedIcon"
 
 //component
-import Paginate from "../paginate/Paginate";
+import Paginate from "../paginate/Paginate"
+import Link from "next/link"
 
 const Table = () => {
-    const [currentPage, setCurrentPage] = useState(0);
-    const students:student[] = [
-        {
-            name: "Samanta William",
-            parentName: "Mana William",
-            grade: "VII A"
-        },
-        {
-            name: "Tony Soap",
-            parentName: "James Soap",
-            grade: "VII B"
-        },
-        {
-            name: "Karen Hope",
-            parentName: "Justin Hope",
-            grade: "VII C"
-        },
-        {
-            name: "Jordan Nico",
-            parentName: "Amanda Nico",
-            grade: "VII B"
-        },
-        {
-            name: "Nadila Adja",
-            parentName: "Jack Adja",
-            grade: "VII A"
-        },
-        {
-            name: "Johnny Ahmad",
-            parentName: "Danny Ahmad",
-            grade: "VII B"
-        }
-    ]
+    const [currentPage, setCurrentPage] = useState(0)
 
     const labelColors = {
         "VII A": "orange",
@@ -86,7 +58,7 @@ const Table = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    { students.map((student:student) => (
+                    { Students.map((student:student) => (
                         <tr key={`student-${student.name}`} className={styles.students__tableWrapper__table__item}>
                             <td>
                                 <label className={styles.students__tableWrapper__table__inputWrapper}>
@@ -95,10 +67,10 @@ const Table = () => {
                                 </label>
                             </td>
                             <td>
-                                <div className={styles.students__tableWrapper__table__item__name}>
+                                <Link href={`students/${student.id}`} className={styles.students__tableWrapper__table__item__name}>
                                     <div className={styles.students__tableWrapper__table__item__name__avatar}></div>
-                                    <h4>{student.name}</h4>
-                                </div>
+                                    <h4 className={styles.students__tableWrapper__table__item__name__text}>{student.name}</h4>
+                                </Link>
                             </td>
                             <td><p className="text-semibold-1" style={{color: variables.colorPurple}}>#123456789</p></td>
                             <td><p className="text-regular-2" style={{color: variables.colorGrey3}}>March 25, 2021</p></td>
