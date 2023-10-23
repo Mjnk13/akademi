@@ -64,9 +64,12 @@
                         border-radius: 25px;
                         border: 2px solid variables.$color-grey-3;
                         width: 100%;
+                        input {
+                            width: 100%;
+                        }
                     }
                     &__list{
-                        margin-top: 1rem;
+                        margin-top: 0.75rem;
                     }
                     &__viewMoreBtn {
                         @extend %view-more-btn;

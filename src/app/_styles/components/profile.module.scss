@@ -29,6 +29,19 @@
                 background-color: variables.$color-orange;
             }
         }
+        &__hollowCircle {
+            @extend .profile__background__circle;
+            &--yellow {
+                right: 5rem;
+                top: 1rem;
+                border: 1rem solid variables.$color-yellow;
+            }
+            &--orange {
+                right: 11rem;
+                top: 3.5rem;
+                border: 1rem solid variables.$color-orange;
+            }
+        }
     }
     &__userInfo {
         @extend %container-fluid-bg-white;
@@ -53,14 +66,14 @@
         &__body {
             @extend %row-container;
             align-items: center;
-            gap: 2.5rem;
+            gap: 2rem;
             margin-top: 0.5rem;
             &__mainInfo {
                 &__name {
                     color: variables.$color-text;
                 }
                 &__role {
-                    color: variables.$color-text;
+                    color: variables.$color-grey-3;
                 }
                 &__location {
                     margin-top: 0.5rem;
@@ -80,7 +93,7 @@
             &__contact {
                 @extend %row-container;
                 flex: 1 1 auto;
-                gap: 1.5rem;
+                gap: 1.25rem;
                 &__item {
                     &__title {
                         color: variables.$color-grey-3;
@@ -104,6 +117,45 @@
                         &__description {
                             color: variables.$color-text;
                         }
+                    }
+                }
+            }
+            &__teacherDetailsInfo {
+                max-width: 75%;
+                &__about {
+                    margin-bottom: 1rem;
+                    &__title {
+                        color: variables.$color-text;
+                    }
+                    &__description {
+                        color: variables.$color-text;
+                    }
+                }
+                &__education {
+                    &__title {
+                        color: variables.$color-text;
+                        margin-bottom: 1rem;
+                    }
+                    &__list {
+                        &__item {
+                            margin-bottom: 1rem;
+                            &__title {
+                                color: variables.$color-text;
+                                margin-bottom: 0.5rem;
+                            }
+                            &__yearDuration {
+                                color: variables.$color-grey-3;
+                            }
+                        }
+                    }
+                }
+                &__expertise {
+                    &__title {
+                        color: variables.$color-text;
+                        margin-bottom: 0.5rem;
+                    }
+                    &__info {
+                        color: variables.$color-text;
                     }
                 }
             }

@@ -1,6 +1,6 @@
 export type schedule_details = {
     title: string,
-    subject: string,
+    subTitle: string,
     date: string,
     time: string,
     color: string,
