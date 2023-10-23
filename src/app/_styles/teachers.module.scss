@@ -45,6 +45,7 @@
         &__itemWrapper {
             @extend %col-3;
             margin-bottom: 1rem;
+            text-decoration: none;
             &__item {
                 @extend %container-fluid-bg-white;
                 position: relative;
@@ -96,5 +97,36 @@
     }
     &__paginate {
         @extend %paginate;
+    }
+}
+
+.teacherDetails {
+    flex: 1 1 auto;
+    padding: 1rem 2rem;
+    &__heading {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 3rem;
+        &__title {
+            color: variables.$color-text;
+        }
+        &__right {
+            display: flex;
+            gap: 2rem;
+            &__search {
+                @extend %search;
+            }
+        }
+    }
+    &__mainSection {
+        @extend %row-container;
+        &__profileSection {
+            @extend %col-8;
+            padding-right: 1rem;
+        }
+        &__scheduleDetailsSection {
+            @extend %col-4;
+        }
     }
 }

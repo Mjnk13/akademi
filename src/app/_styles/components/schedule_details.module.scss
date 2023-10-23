@@ -1,0 +1,103 @@
+@use "../utils/variables.module.scss";
+@use "../utils/container.module.scss";
+@use "../components/button.module.scss";
+
+.scheduleDetails {
+    padding-left: 1rem;
+    &__header {
+        @extend %container-fluid-bg-white;
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+        &__title {
+            color: variables.$color-text;
+        }
+        &__time {
+            color: variables.$color-grey-3;
+        }
+    }
+    &__body {
+        margin-bottom: 1.5rem;
+        &__scheduleDetailsList {
+            &__item {
+                @extend %container-fluid-bg-white;
+                position: relative;
+                overflow: hidden;
+                margin-bottom: 1.5rem;
+                padding: 1.5rem;
+                padding-left: 2rem;
+                display: flex;
+                justify-content: space-between;
+                &__status {
+                    content: '';
+                    position: absolute;
+                    width: 1rem;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    &--purple {
+                        background-color: variables.$color-purple;
+                    }
+                    &--orange {
+                        background-color: variables.$color-orange;
+                    }
+                    &--yellow {
+                        background-color: variables.$color-yellow;
+                    }
+                    &--text {
+                        background-color: variables.$color-text;
+                    }
+                }
+                &__wrapper {
+                    &__titleSection {
+                        margin-bottom: 1rem;
+                        &__title {
+                            color: variables.$color-text;
+                        }
+                        &__subject {
+                            color: variables.$color-grey-3;
+                        }
+                    }
+                    &__dateSection {
+                        &__date{
+                            color: variables.$color-grey-3;
+                            margin-bottom: 0.5rem;
+                            display: flex;
+                            align-items: center;
+                            gap: 0.5rem;
+                            svg {
+                                width: 24px;
+                                height: 24px;
+                                path {
+                                    fill: variables.$color-orange;
+                                }
+                            }
+                        }
+                        &__time {
+                            @extend .scheduleDetails__body__scheduleDetailsList__item__wrapper__dateSection__date;
+                            color: variables.$color-grey-3;
+                            svg {
+                                width: 24px;
+                                height: 24px;
+                                path {
+                                    fill: variables.$color-yellow;
+                                }
+                            }
+                        }
+                    }
+                }
+                &__avatar {
+                    align-self: flex-end;
+                    background-color: variables.$color-grey-2;
+                    border-radius: 50%;
+                    width: 3rem;
+                    height: 3rem;
+                }
+            }
+        }
+    }
+    &__footer{
+        &__viewMoreBtn {
+            @extend %view-more-btn;
+        }
+    }
+}
