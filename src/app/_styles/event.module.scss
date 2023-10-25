@@ -5,7 +5,7 @@
 @use "./utils/grid.module.scss";
 
 .event {
-    flex: 1 1 auto;
+    flex: 1 0;
     padding: 1rem 2rem;
     &__heading {
         display: flex;
