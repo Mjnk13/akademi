@@ -2,17 +2,24 @@
 
 //react
 import { useState } from "react";
+import Link from "next/link";
 
 //styles
 import styles from "@/app/_styles/foods.module.scss"
-import { food } from "@/types/food";
+
+//raw_data
+import { Foods } from "@/raw_data/food"
+
+//types
+import { food } from "@/types/food"
 
 //icons
-import BarChartIcon from "../icon/BarChartIcon";
-import ArrowIcon from "../icon/ArrowIcon";
-import StarIcon from "../icon/StarIcon";
-import DotsIcon from "../icon/DotsIcon";
-import Paginate from "../paginate/Paginate";
+import BarChartIcon from "../icon/BarChartIcon"
+import ArrowIcon from "../icon/ArrowIcon"
+import StarIcon from "../icon/StarIcon"
+import DotsIcon from "../icon/DotsIcon"
+import Paginate from "../paginate/Paginate"
+import CircleBarIcon from "../icon/CircleBarIcon"
 
 const FoodsList = () => {
     const [currentPage, setCurrentPage] = useState(0);
@@ -20,44 +27,6 @@ const FoodsList = () => {
     function handlePageClick(event: {selected: number}) {
         setCurrentPage(event.selected)
     }
-
-    const foods:food[] = [
-        {
-            type: "lunch",
-            name: "Beef Steak with Fried Potato",
-            rate: 4.9,
-            totalOrder: 1456,
-            interest: 26
-        },
-        {
-            type: "breakfast",
-            name: "Pancake with Honey",
-            rate: 4.7,
-            totalOrder: 1456,
-            interest: 26
-        },
-        {
-            type: "lunch",
-            name: "Japanese Beef Ramen",
-            rate: 4.8,
-            totalOrder: 1456,
-            interest: 26
-        },
-        {
-            type: "lunch",
-            name: "Mixed Salad",
-            rate: 4.2,
-            totalOrder: 1456,
-            interest: 26
-        },
-        {
-            type: "snack",
-            name: "Beef Meatball with Vegetable",
-            rate: 4.5,
-            totalOrder: 1456,
-            interest: 26
-        }
-    ]
 
     const categories:string[] = [
         "All Menus",
@@ -80,14 +49,16 @@ const FoodsList = () => {
             <div className={styles.foods__list__body}>
                 <table className={styles.foods__list__body__table}>
                     <tbody>
-                        {foods.map((food) => (
+                        {Foods.map((food: food) => (
                             <tr key={`food-${food.name}`} className={styles.foods__list__body__table__item}>
-                                <td><div className={styles.foods__list__body__table__item__image}></div></td>
                                 <td>
-                                    <div className={styles.foods__list__body__table__item__typeName}>
-                                        <p className={`text-regular-2 ${styles.foods__list__body__table__item__typeName__type}`}>{food.type}</p>
-                                        <h4 className={styles.foods__list__body__table__item__typeName__name}>{food.name}</h4>
-                                    </div>
+                                    <Link href={`food/${food.id}`} className={styles.foods__list__body__table__item__link}>
+                                        <div className={styles.foods__list__body__table__item__link__image}/>
+                                        <div className={styles.foods__list__body__table__item__link__typeName}>
+                                            <p className={`text-regular-2 ${styles.foods__list__body__table__item__link__typeName__type}`}>{food.type}</p>
+                                            <h4 className={styles.foods__list__body__table__item__link__typeName__name}>{food.name}</h4>
+                                        </div>
+                                    </Link>
                                 </td>
                                 <td><h4 className={styles.foods__list__body__table__item__rate}><StarIcon/> {food.rate}</h4></td>
                                 <td>
@@ -106,6 +77,12 @@ const FoodsList = () => {
                                             <h4 className={styles.foods__list__body__table__item__interestWrapper__info__number}>{food.interest}%</h4>
                                             <p className={`text-regular-1 ${styles.foods__list__body__table__item__interestWrapper__info__text}`}>Interest</p>
                                         </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div className={styles.foods__list__body__table__item__circleBar}>
+                                        <CircleBarIcon/>
+                                        <p className={`text-semibold-2 ${styles.foods__list__body__table__item__circleBar__percentage}`}>50%</p>
                                     </div>
                                 </td>
                                 <td><DotsIcon/></td>

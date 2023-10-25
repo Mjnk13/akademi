@@ -7,7 +7,7 @@
 @use "./components/profile.module.scss";
 
 .userDashboard {
-    flex: 1 0 0%;
+    flex: 1 0;
     @extend %row-container;
     &__mainSection {
         @extend %container-fluid;

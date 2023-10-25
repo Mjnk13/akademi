@@ -6,7 +6,7 @@
 @use "./components/paginate.module.scss";
 
 .teachers {
-    flex: 1 1 auto;
+    flex: 1 0;
     padding: 1rem 2rem;
     &__heading {
         &__1 {
@@ -101,7 +101,7 @@
 }
 
 .teacherDetails {
-    flex: 1 1 auto;
+    flex: 1 0;
     padding: 1rem 2rem;
     &__heading {
         display: flex;

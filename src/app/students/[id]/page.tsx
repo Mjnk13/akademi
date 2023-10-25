@@ -1,7 +1,11 @@
 //styles
 import styles from "@/app/_styles/students.module.scss"
+
+//types
 import { schedule_details } from "@/types/scheduledetails"
 import { contact, mainContact } from "@/types/profile"
+import { shool_expense } from "@/types/schoolexpense"
+import { student } from "@/types/student"
 
 //components
 import Heading from "@/app/_components/students/details/Heading"
@@ -11,8 +15,6 @@ import SchoolExpense from "@/app/_components/finance/subComponent/SchoolExpense"
 
 //raw data
 import { Students } from "@/raw_data/student"
-import { student } from "@/types/student"
-import { shool_expense } from "@/types/schoolexpense"
 
 //icons
 import LocationIcon from "@/app/_components/icon/LocationIcon"

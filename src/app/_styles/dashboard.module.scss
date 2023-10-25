@@ -11,7 +11,7 @@
     @extend %row-container;
     &__mainSection {
         @extend %container-fluid;
-        flex: 1 0 0%;
+        flex: 1 0;
         padding: 1rem 1.5rem;
         &__heading {
             display: flex;
