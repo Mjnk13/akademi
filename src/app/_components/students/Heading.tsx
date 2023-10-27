@@ -10,6 +10,9 @@ import SearchIcon from "../icon/SearchIcon"
 import DropdownIcon from "../icon/DropdownIcon"
 import PlusIcon from "../icon/PlusIcon"
 
+//reacts
+import Link from "next/link"
+
 const Heading = () => {
     return (
         <div className={styles.students__heading}>
@@ -26,7 +29,7 @@ const Heading = () => {
                 </div>
                 <div className={styles.students__heading__2__btnGroup}>
                     <button className={styles.students__heading__2__btnGroup__newest}>Newest <DropdownIcon/></button>
-                    <button className={styles.students__heading__2__btnGroup__newStudent}><PlusIcon/> New Student</button>
+                    <Link href="/students/add-new-student" className={styles.students__heading__2__btnGroup__newStudent}><PlusIcon/> New Student</Link>
                 </div>
             </div>
         </div>
