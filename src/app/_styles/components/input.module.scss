@@ -1,0 +1,65 @@
+@use "../utils/variables.module.scss";
+@use "../utils/container.module.scss";
+@use "../utils/grid.module.scss";
+
+.inputGroup {
+    @extend %col-6;
+    margin-bottom: 2rem;
+    &:nth-child(odd) {
+        padding-right: 1rem;
+    }
+    &:nth-child(even) {
+        padding-left: 1rem;
+    }
+    > p {
+        color: variables.$color-text;
+        margin-bottom: 1rem;
+    }
+    input {
+        padding-left: 1rem;
+        border: 2px solid variables.$color-grey-2;
+        height: 3rem;
+        border-radius: 10px;
+        width: 100%;
+        outline: none;
+        &::placeholder {
+            color: variables.$color-grey-3;
+        }
+    }
+    &__doubleInput {
+        @extend %row-container;
+        &__wrapper {
+            @extend %col-6;
+            &:nth-child(1) {
+                padding-right: 1rem;
+            }
+            &:nth-child(2) {
+                padding-left: 1rem;
+            }
+        }
+    }
+    > textarea {
+        padding: 1rem;
+        border: 2px solid variables.$color-grey-2;
+        border-radius: 10px;
+        width: 100%;
+        height: 10rem;
+        resize: none;
+        outline: none;
+        &::placeholder {
+            color: variables.$color-grey-3;
+        }
+    }
+    &__importFile {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        width: 10rem;
+        height: 10rem;
+        padding: 1.5rem;
+        border: 2px dashed variables.$color-grey-2;
+        &__placeholder {
+            color: variables.$color-grey-3;
+        }
+    }
+}
