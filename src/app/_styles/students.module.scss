@@ -36,6 +36,7 @@
                 &__newStudent{
                     @extend %btn-purple, %btn-text-and-icon;
                     border-radius: 25px;
+                    text-decoration: none;
                 }
             }
         }
@@ -182,6 +183,67 @@
         }
         &__scheduleDetailsSection {
             @extend %col-4;
+        }
+    }
+}
+
+.addNewStudent {
+    flex: 1 0;
+    padding: 1rem 2rem;
+    &__heading {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 3rem;
+        &__title {
+            color: variables.$color-text;
+        }
+    }
+    &__studentDetails {
+        @extend %container-fluid-bg-white;
+        margin-top: 2rem;
+        &__title {
+            color: variables.$color-white;
+            background-color: variables.$color-purple;
+            border-radius: 25px 25px 0 0;
+            padding: 0.5rem 1rem; 
+        }
+        &__mainWrapper {
+            @extend %row-container;
+            padding: 1.5rem 2rem 0.5rem;
+            &__inputFileWrapper {
+                @extend %col-2;
+            }
+            &__formGroup {
+                @extend %row-container, %col-10;
+                padding-left: 1.5rem;
+            }
+        }
+    }
+    &__parentDetails {
+        @extend .addNewStudent__studentDetails;
+        &__title {
+            @extend .addNewStudent__studentDetails__title;
+        }
+        &__formGroup {
+            @extend .addNewStudent__studentDetails__mainWrapper;
+        }
+    }
+    &__formsOption {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        justify-content: flex-end;
+        margin-top: 2rem;
+        &__saveAsDraftBtn {
+            border-radius: 25px;
+            padding: 0.75rem 1.25rem;
+            @extend %btn-purple-outline;
+        }
+        &__submitBtn {
+            border-radius: 25px;
+            padding: 0.75rem 1.25rem;
+            @extend %btn-purple;
         }
     }
 }

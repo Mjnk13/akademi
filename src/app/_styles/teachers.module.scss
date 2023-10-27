@@ -155,7 +155,7 @@
         }
         &__formGroup {
             @extend %row-container;
-            padding: 1.5rem 2rem 0rem;
+            padding: 1.5rem 2rem 0.5rem;
         }
     }
     &__education {
