@@ -9,6 +9,7 @@ import UserMenu from "../menu/UserMenu"
 import SearchIcon from "../icon/SearchIcon"
 import DropdownIcon from "../icon/DropdownIcon"
 import PlusIcon from "../icon/PlusIcon"
+import Link from "next/link"
 
 const Heading = () => {
     return (
@@ -26,7 +27,7 @@ const Heading = () => {
                 </div>
                 <div className={styles.teachers__heading__2__btnGroup}>
                     <button className={styles.teachers__heading__2__btnGroup__newest}>Newest <DropdownIcon/></button>
-                    <button className={styles.teachers__heading__2__btnGroup__newTeacher}><PlusIcon/> New Teacher</button>
+                    <Link href={"/teachers/add-new-teacher"} className={styles.teachers__heading__2__btnGroup__newTeacher}><PlusIcon/> New Teacher</Link>
                 </div>
             </div>
         </div>
